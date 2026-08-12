@@ -1462,6 +1462,146 @@
       "identity": "Một trong những người thành lập nên kỹ viện \"Nụ cười của hoa hồng\"",
       "type": "character",
       "first_seen": 261
+    },
+    {
+      "name_en": "Jack",
+      "name_vi": "Jack",
+      "identity": "Một người bạn cũ của Vlad ở khu ổ chuột đã qua đời",
+      "type": "character",
+      "first_seen": 65
+    },
+    {
+      "name_en": "Anna",
+      "name_vi": "Anna",
+      "identity": "Một người bạn cũ của Vlad ở khu ổ chuột đã qua đời",
+      "type": "character",
+      "first_seen": 65
+    },
+    {
+      "name_en": "Alicia Heinal",
+      "name_vi": "Alicia Hainal",
+      "identity": "Nữ Nam tước Hainal và là chủ nhân của vùng Deomar, người đã trao chiếc khăn tay làm bảo hiểm cho Vlad",
+      "type": "character",
+      "first_seen": 66
+    },
+    {
+      "name_en": "House Gaidar",
+      "name_vi": "Gia tộc Gaidar",
+      "identity": "Thế lực bá chủ mới của phương Tây đang không ngừng bành trướng tầm ảnh hưởng đến phương Bắc và vùng trung tâm",
+      "type": "faction",
+      "first_seen": 66
+    },
+    {
+      "name_en": "Chama",
+      "name_vi": "Chama",
+      "identity": "Địa danh có bến phà nơi những người lùn tập trung và khóc lóc vì không thể lên phà",
+      "type": "location",
+      "first_seen": 74
+    },
+    {
+      "name_en": "Baranov steelworking family",
+      "name_vi": "Gia tộc luyện thép Baranov",
+      "identity": "Gia tộc luyện thép sở hữu các hiệp sĩ mặc giáp sắt tham gia vào cuộc săn lùng rồng sa ngã",
+      "type": "faction",
+      "first_seen": 75
+    },
+    {
+      "name_en": "Fort Bernhem",
+      "name_vi": "Pháo đài Bernhem",
+      "identity": "Pháo đài bằng đá nằm ở vùng cực bắc, nơi Rutiger trấn giữ và là nơi Đội hiệp sĩ Diệt Rồng tự ý kéo đến đóng quân",
+      "type": "location",
+      "first_seen": 77
+    },
+    {
+      "name_en": "Dragon Blood Dukes",
+      "name_vi": "Thân vương Huyết Long",
+      "identity": "Thế lực quý tộc trung ương dẫn dắt Đội hiệp sĩ Diệt Rồng dưới sự bảo hộ của Hoàng đế đế quốc",
+      "type": "faction",
+      "first_seen": 77
+    },
+    {
+      "name_en": "Iron Ball Knights",
+      "name_vi": "Hiệp sĩ Thiết Cầu",
+      "identity": "Đoàn hiệp sĩ nổi tiếng với việc sử dụng các ngọn đuốc ma pháp",
+      "type": "faction",
+      "first_seen": 78
+    },
+    {
+      "name_en": "Steel Forge Knights",
+      "name_vi": "Hiệp sĩ Lò Thép",
+      "identity": "Đội hiệp sĩ đầu tiên bắt đầu cuộc thảo phạt và kiên trì bám đuổi Lindworm",
+      "type": "faction",
+      "first_seen": 79
+    },
+    {
+      "name_en": "Lindwurm",
+      "name_vi": "Lindworm",
+      "identity": "Con bạch long (rồng trắng) tàn phá phương Bắc, bị Vlad và Rutiger tiêu diệt",
+      "type": "character",
+      "first_seen": 80
+    },
+    {
+      "name_en": "Knight of the Blue Moonlight",
+      "name_vi": "Hiệp sĩ của Ánh trăng Xanh",
+      "identity": "Vị hiệp sĩ mang thế giới xanh thẳm, người đã mở ra thế giới hiệp sĩ cho đứa trẻ (Jorge/Vlad) nhưng cũng gián tiếp khiến đứa trẻ mất đi mái nhà",
+      "type": "character",
+      "first_seen": 85
+    },
+    {
+      "name_en": "Stephen of Gaidar",
+      "name_vi": "Stefan của nhà Gaidar",
+      "identity": "Một hiệp sĩ trẻ tuổi tài năng ngoài đôi mươi ở phương Tây, đối thủ được Joseph chọn cho màn ra mắt của Vlad",
+      "type": "character",
+      "first_seen": 89
+    },
+    {
+      "name_en": "Ramanov family",
+      "name_vi": "Gia tộc Ravnoma",
+      "identity": "Gia tộc cựu bá chủ phương Tây đã bị Sigmund Gaidar trục xuất",
+      "type": "faction",
+      "first_seen": 91
+    },
+    {
+      "name_en": "Forest of the elves",
+      "name_vi": "Khu rừng tinh linh",
+      "identity": "Nơi ngự trị của tộc tinh linh, nằm ở phương Đông của đế quốc",
+      "type": "location",
+      "first_seen": 92
+    },
+    {
+      "name_en": "Eastern part of the empire",
+      "name_vi": "Phương Đông của đế quốc",
+      "identity": "Vùng đất phía đông của đế quốc, nơi có khu rừng của tộc tinh linh",
+      "type": "location",
+      "first_seen": 92
+    },
+    {
+      "name_en": "Dice",
+      "name_vi": "Dice",
+      "identity": "Một trong những ông trùm của thế giới ngầm, chủ sòng bạc",
+      "type": "character",
+      "first_seen": 93
+    },
+    {
+      "name_en": "Black Bear",
+      "name_vi": "Gấu Đen",
+      "identity": "Kẻ buôn bán phụ nữ, được Giáo hội ban bản xá tội nhưng cuối cùng bị Vlad kết liễu",
+      "type": "character",
+      "first_seen": 96
+    },
+    {
+      "name_en": "Madame Marcella",
+      "name_vi": "Madame Marcella",
+      "identity": "Chủ quán trọ \"Nụ cười của hoa hồng\"",
+      "type": "character",
+      "first_seen": 97
+    },
+    {
+      "name_en": "Smile of a Rose",
+      "name_vi": "Nụ cười của hoa hồng",
+      "identity": "Quán trọ do Madame Marcella điều hành, nơi trú ngụ của những người thân cận với Vlad",
+      "type": "location",
+      "first_seen": 97
     }
   ]
 }
