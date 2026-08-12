@@ -319,7 +319,8 @@
 
             const num = String(chapNum).padStart(3, '0');
             try {
-                const res = await fetch(`translated_chapters/chapter_${num}.txt`);
+                // Thêm query string ngẫu nhiên để vượt qua bộ nhớ đệm (Cache) của trình duyệt
+                const res = await fetch(`translated_chapters/chapter_${num}.txt?v=${Date.now()}`);
                 if (!res.ok) throw new Error();
                 let text = await res.text();
 
