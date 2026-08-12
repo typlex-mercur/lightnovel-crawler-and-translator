@@ -668,6 +668,43 @@
             document.getElementById('custom-tooltip').classList.remove('show');
         }
 
+        // --- SETTINGS LOGIC ---
+        function toggleSettings() {
+            settingsOpen = !settingsOpen;
+            const modal = document.getElementById('settings-modal');
+            const overlay = document.getElementById('settings-overlay');
+            if (settingsOpen) {
+                modal.classList.add('show');
+                overlay.classList.add('show');
+            } else {
+                modal.classList.remove('show');
+                overlay.classList.remove('show');
+            }
+        }
+
+        function setupSettings() {
+            const fontBtns = document.querySelectorAll('.font-btn');
+            fontBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    fontBtns.forEach(b => b.classList.remove('active'));
+                    e.currentTarget.classList.add('active');
+                    const font = e.currentTarget.getAttribute('data-font');
+                    document.documentElement.style.setProperty('--font-body', font);
+                });
+            });
+            const sizeDisplay = document.getElementById('font-size-display');
+            if (sizeDisplay) sizeDisplay.innerText = currentFontSize + 'px';
+        }
+
+        function changeFontSize(delta) {
+            currentFontSize += delta * 2;
+            if (currentFontSize < 12) currentFontSize = 12;
+            if (currentFontSize > 32) currentFontSize = 32;
+            document.documentElement.style.setProperty('--font-size-body', currentFontSize + 'px');
+            const sizeDisplay = document.getElementById('font-size-display');
+            if (sizeDisplay) sizeDisplay.innerText = currentFontSize + 'px';
+        }
+
         // --- UTILS ---
         function escapeHtml(text) {
             const div = document.createElement('div');
