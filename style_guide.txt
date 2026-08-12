@@ -1,0 +1,98 @@
+Dưới đây là **BỘ QUY TẮC DỊCH (STYLE GUIDE)** chi tiết được đúc kết từ các cặp bản dịch EN→VN của tác phẩm. Tài liệu này được thiết kế rõ ràng, ngắn gọn và có thể sử dụng trực tiếp làm System Prompt cho các công cụ dịch thuật AI hoặc hướng dẫn cho dịch giả.
+
+---
+
+# BẢN HƯỚNG DẪN DỊCH THUẬT (STYLE GUIDE)
+**Thể loại:** Light Novel Fantasy / Kiếm hiệp phương Tây (Gritty Fantasy)
+
+---
+
+## 1. Văn phong tổng quan (Overall Tone & Style)
+*   **Giọng kể:** Mang màu sắc điện ảnh, trầm buồn, phong trần nhưng có tính chất văn học và giàu chất thơ. Tránh lối dịch thô ráp, word-by-word.
+*   **Mức độ trang trọng:** Linh hoạt. Cảnh tả cảnh/đời sống khu ổ chuột cần chân thực, bụi bặm; cảnh quý tộc/hiệp sĩ cần trang trọng, nghiêm cẩn.
+*   **Phong cách câu:** 
+    *   Ưu tiên câu văn mượt mà, giàu hình ảnh, sử dụng các cụm từ thuần Việt hoặc Hán-Việt có tính gợi hình cao (Ví dụ: *Màn đêm dần buông, rực sáng, tồi tàn và xoàng xĩnh, đầm đìa mồ hôi, bình minh đang ló dạng*).
+    *   Cho phép chủ động tái cấu trúc câu để tạo nhịp điệu tự nhiên trong tiếng Việt thay vì bám sát cấu trúc ngữ pháp tiếng Anh.
+
+---
+
+## 2. Quy tắc xử lý tên riêng (Proper Nouns)
+*   **Tên nhân vật chính/phụ:** Giữ nguyên gốc hoặc Việt hóa nhẹ theo chuẩn phát âm dễ đọc của người Việt (đặc biệt là âm "Z" chuyển thành "J"):
+    *   *Vlad* $\rightarrow$ Vlad
+    *   *Zemina* $\rightarrow$ Jemina
+    *   *Zayar* $\rightarrow$ Jayar
+    *   *Harven* $\rightarrow$ Haven (lược bớt âm câm)
+    *   *Goethe / Gott* $\rightarrow$ Goth
+    *   *Josef* $\rightarrow$ Joseph
+*   **Tên địa danh:** Giữ nguyên hoặc điều chỉnh nhẹ cho xuôi tai:
+    *   *Shoara* $\rightarrow$ Shoara
+    *   *Deirmar* $\rightarrow$ Deomar
+    *   *Bayezid* $\rightarrow$ Bayezid
+*   **Biệt danh/Chức danh:** Dịch nghĩa sang tiếng Việt:
+    *   *One-Armed Jack* $\rightarrow$ Jack 1 tay
+    *   *Madame* $\rightarrow$ Bà chủ
+    *   *Captain Hoover* $\rightarrow$ Thuyền trưởng Hoover
+    *   *Captain* (trong đội) $\rightarrow$ Đội trưởng
+
+---
+
+## 3. Quy tắc hội thoại & Xưng hô (Dialogue & Pronouns)
+Hệ thống xưng hô trong tiếng Việt cực kỳ quan trọng để thể hiện đúng vị thế xã hội và quan hệ nhân vật:
+
+*   **Quan hệ bạn bè/đồng lứa (khu ổ chuột):**
+    *   Bình thường: *Cậu - Tôi* (Vlad - Jemina).
+    *   Khi trêu đùa/bực dọc: *Cậu - Tôi*, *Tôi - Anh* (Vlad - Goth).
+*   **Quan hệ bề trên - kẻ dưới (khu ổ chuột):**
+    *   Chủ tiệm/Người lớn tuổi nói với trẻ con: *Tao - Chúng mày / Tao - Mày*.
+    *   Trẻ con nói với người lớn tuổi: *Tôi - Ông* (khi bình thường), hoặc chuyển sang *Tao - Ông* khi giận dữ/đe dọa (Jemina đe dọa ông lão thợ rèn).
+*   **Quan hệ Hiệp sĩ - Thiếu chủ (Quý tộc):**
+    *   Hiệp sĩ nói với Chủ nhân: Gọi chủ nhân là *Ngài*, xưng *Tôi* (Jayar nói với Joseph).
+    *   Chủ nhân nói với Hiệp sĩ: Xưng *Ta*, gọi *Ngươi* (Joseph nói với Jayar).
+*   **Định dạng hội thoại:**
+    *   Sử dụng dấu ngoặc kép kép `"..."` cho lời thoại trực tiếp.
+    *   Lời thoại nội tâm (suy nghĩ) đặt trong dấu ngoặc đơn `'...'` hoặc viết nghiêng.
+
+---
+
+## 4. Quy tắc thuật ngữ (Terminology)
+Dịch các thuật ngữ Fantasy/Kiếm hiệp phương Tây sang từ Hán-Việt hoặc thuần Việt mang tính chất cổ trang, kiếm hiệp:
+*   *Blacksmith's shop* $\rightarrow$ Tiệm rèn / Lò rèn
+*   *Undead* $\rightarrow$ Xác sống
+*   *Subjugation* $\rightarrow$ Chuyến chinh phạt / Cuộc thảo phạt (quái vật)
+*   *Base camp* $\rightarrow$ Doanh trại
+*   *Lord* $\rightarrow$ Thiếu chủ (nếu là người kế vị trẻ tuổi) / Lãnh chúa
+*   *Knight* $\rightarrow$ Hiệp sĩ
+*   *Baron* $\rightarrow$ Nam tước
+
+---
+
+## 5. Pattern dịch thường gặp (Translation Patterns)
+Tránh dịch sát nghĩa đen (literal), hãy chuyển đổi sang các diễn đạt tự nhiên trong văn học Việt Nam:
+
+| Tiếng Anh (EN) | Tiếng Việt (VN) | Ghi chú |
+| :--- | :--- | :--- |
+| *The lights were shining in the dark night* | Màn đêm dần buông, những ngọn đèn được thắp lên... | Dịch thoát ý, tạo không khí |
+| *Lost in thought* | Đứng ngẩn người ra | Tự nhiên, hợp bối cảnh |
+| *Acting a bit crazy* | Như bị điên | Khẩu ngữ đời thường |
+| *Rumors about you have been going around* | Mọi người đều nói này nói nọ cả rồi | Bản địa hóa |
+| *Sweating profusely* | Mồ hôi nhễ nhại / Đầm đìa mồ hôi | Từ láy gợi hình |
+| *Insatiable desire to learn* | Khát khao được học hỏi | Trang trọng, tích cực |
+| *Dawn was breaking* | Bình minh đang ló dạng | Văn phong trữ tình |
+| *Steps while returning seem light* | Đường về lại thấy nhẹ nhàng hơn | Thoát ý |
+
+---
+
+## 6. Quy tắc về dấu câu & Từ tượng thanh (Punctuation & Onomatopoeia)
+*   **Dấu lửng (Ellipsis):** Giữ nguyên định dạng `...` hoặc `…` để biểu thị sự ngập ngừng, im lặng hoặc âm thanh nhỏ dần.
+*   **Từ tượng thanh / Tiếng động:** Dịch thoát và Việt hóa để tăng tính biểu cảm:
+    *   *Huff! / Ha...* $\rightarrow$ Phù... / Ha... (tiếng thở dốc).
+    *   *Boom- / Whoosh-* $\rightarrow$ Vùuu - (tiếng vung gậy/kiếm).
+    *   *Hiccup! Sob!* $\rightarrow$ Hức hức... / Huhu... (tiếng khóc nấc).
+    *   *Kkuuh! Ugh!* $\rightarrow$ Giữ nguyên hoặc chuyển thành tiếng rên rỉ hự, ặc tùy ngữ cảnh.
+
+---
+
+## 7. Những điều KHÔNG NÊN làm (Taboos)
+1.  **Không dịch word-by-word:** Tránh các câu tối nghĩa như *"Một bên của con đường... đang ngủ"*. Phải dịch thoát thành *"Một bên đang chìm vào giấc ngủ"*.
+2.  **Không lạm dụng từ Hán-Việt quá đà:** Đây là kiếm hiệp phương Tây (Western Fantasy), tránh dùng các từ quá đậm chất Trung Cổ Trung Quốc (như *tiểu tử, lão phu, đại hiệp*), thay vào đó dùng *thằng nhóc, ông lão, hiệp sĩ*.
+3.  **Không bỏ quên bối cảnh:** Khi dịch các đại từ nhân xưng, luôn phải đối chiếu với địa vị và cảm xúc của nhân vật trong phân cảnh đó để chọn từ phù hợp (ví dụ: không để hiệp sĩ xưng "tôi - cậu" với lãnh chúa của mình).

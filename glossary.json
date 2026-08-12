@@ -1,0 +1,1467 @@
+{
+  "entries": [
+    {
+      "name_en": "Vlad",
+      "name_vi": "Vlad",
+      "identity": "Thiếu niên tóc vàng xuất thân từ khu ổ chuột Shoara, có khát khao học hỏi lớn và có tài năng thiên bẩm về kiếm thuật.",
+      "type": "character",
+      "first_seen": 1
+    },
+    {
+      "name_en": "Zemina",
+      "name_vi": "Jemina",
+      "identity": "Cô gái có mái tóc đỏ rực rỡ như lửa, bạn thuở nhỏ của Vlad ở khu ổ chuột.",
+      "type": "character",
+      "first_seen": 1
+    },
+    {
+      "name_en": "Shoara",
+      "name_vi": "Shoara",
+      "identity": "Thành phố bị chia cắt làm hai nửa thế giới khác biệt bởi một con đường lớn, nơi có khu ổ chuột tồi tàn mà Vlad sinh sống.",
+      "type": "location",
+      "first_seen": 1
+    },
+    {
+      "name_en": "Burleigh",
+      "name_vi": "Burley",
+      "identity": "Thành viên của băng đảng Jorge, tính tình tàn nhẫn, chuyên bắt nạt kẻ yếu ở khu ổ chuột.",
+      "type": "character",
+      "first_seen": 3
+    },
+    {
+      "name_en": "Jorge",
+      "name_vi": "Jorge",
+      "identity": "Thủ lĩnh băng đảng Jorge ở khu ổ chuột, người đã dạy cho Vlad những kỹ năng chiến đấu cơ bản trước khi qua đời.",
+      "type": "character",
+      "first_seen": 3
+    },
+    {
+      "name_en": "Jorge Family",
+      "name_vi": "Băng đảng Jorge",
+      "identity": "Băng nhóm tội phạm hoạt động tại khu ổ chuột của thành phố Shoara.",
+      "type": "faction",
+      "first_seen": 3
+    },
+    {
+      "name_en": "Harven",
+      "name_vi": "Haven",
+      "identity": "Bạn thuở nhỏ của Vlad, bị khuyết tật cụt ngón tay và chân đi khập khiễng nhưng cực kỳ thông minh, tự học chữ để làm việc cho Hoover.",
+      "type": "character",
+      "first_seen": 5
+    },
+    {
+      "name_en": "Hoover",
+      "name_vi": "Hoover",
+      "identity": "Thuyền trưởng/Đội trưởng, người nhận Haven vào làm việc nhờ trí thông minh của cậu.",
+      "type": "character",
+      "first_seen": 5
+    },
+    {
+      "name_en": "Josef",
+      "name_vi": "Joseph",
+      "identity": "Một quý tộc có đôi mắt đen sâu thẳm, người tuyển dụng đội chinh phạt quái vật và phát hiện ra thân phận giả của Vlad.",
+      "type": "character",
+      "first_seen": 15
+    },
+    {
+      "name_en": "Zayar",
+      "name_vi": "Jayar",
+      "identity": "Hiệp sĩ trung thành của Joseph, người có võ nghệ cao cường, đã tiêu diệt kẻ điều khiển xác sống.",
+      "type": "character",
+      "first_seen": 15
+    },
+    {
+      "name_en": "Goethe",
+      "name_vi": "Goth",
+      "identity": "Cận vệ/Đồng hành cùng Vlad tại gia tộc Bayezid, tính tình bộc trực, hay đi cùng và hỗ trợ Vlad.",
+      "type": "character",
+      "first_seen": 20
+    },
+    {
+      "name_en": "House Bayezid",
+      "name_vi": "Gia tộc Bayezid",
+      "identity": "Gia tộc quý tộc danh giá và quyền lực ở phương Bắc, nơi Vlad đến để rèn luyện.",
+      "type": "faction",
+      "first_seen": 20
+    },
+    {
+      "name_en": "Deirmar",
+      "name_vi": "Deomar",
+      "identity": "Địa danh/Dinh thự trắng nằm giữa rừng rộng lớn, nơi gửi lời mời đến cho nhóm của Vlad.",
+      "type": "location",
+      "first_seen": 30
+    },
+    {
+      "name_en": "Noir",
+      "name_vi": "Noir",
+      "identity": "Con hắc mã của Vlad",
+      "type": "character",
+      "first_seen": 102
+    },
+    {
+      "name_en": "Dobrechi",
+      "name_vi": "Dobrechi",
+      "identity": "A rural and secluded territory where Vlad brings the captured bandits",
+      "type": "location",
+      "first_seen": 103
+    },
+    {
+      "name_en": "Baron Dalmatia",
+      "name_vi": "Nam tước Dalmatia",
+      "identity": "Một quý tộc sở hữu lực lượng hiệp sĩ canh gác cánh đồng lúa mạch nơi xảy ra vụ mất tích và trộm hạt giống.",
+      "type": "character",
+      "first_seen": 104
+    },
+    {
+      "name_en": "Blue Oak",
+      "name_vi": "Cây sồi xanh",
+      "identity": "Một cây sồi cổ thụ có linh tính, biết khóc than và chứa một viên đá tỏa sáng kỳ lạ bên trong thân cây mà Vlad đang tìm kiếm",
+      "type": "location",
+      "first_seen": 106
+    },
+    {
+      "name_en": "Dwarves",
+      "name_vi": "Người lùn",
+      "identity": "Chủng tộc thợ rèn tài ba đang phải tự tay phá hủy thành phố và di sản của tổ tiên để di cư lánh nạn",
+      "type": "faction",
+      "first_seen": 107
+    },
+    {
+      "name_en": "The old dwarf",
+      "name_vi": "Ông lão người lùn",
+      "identity": "Chủ nhân của lò rèn cuối cùng còn đỏ lửa, người quyết định ở lại chứng kiến hồi kết của một kỷ nguyên",
+      "type": "character",
+      "first_seen": 107
+    },
+    {
+      "name_en": "The unknown man",
+      "name_vi": "Người đàn ông bí ẩn",
+      "identity": "Người lặn lội tìm đến lò rèn cuối cùng, mang theo một loại kim loại đặc biệt để yêu cầu rèn một thanh kiếm diệt địch",
+      "type": "character",
+      "first_seen": 107
+    },
+    {
+      "name_en": "Eternal Flame",
+      "name_vi": "Ngọn lửa Vĩnh cửu",
+      "identity": "Nguồn lửa huyền thoại, thứ duy nhất có thể chế ngự được loại kim loại đặc biệt do người đàn ông bí ẩn mang đến",
+      "type": "faction",
+      "first_seen": 107
+    },
+    {
+      "name_en": "Radu Dragulia",
+      "name_vi": "Radu Dragulia",
+      "identity": "Con trai của Thân vương Huyết Long (Công tước Dragulia), một hiệp sĩ trẻ tuổi thuộc Đội hiệp sĩ Diệt Rồng đã từng hạ gục rồng nhiều lần.",
+      "type": "character",
+      "first_seen": 108
+    },
+    {
+      "name_en": "Mirshea",
+      "name_vi": "Mirshea",
+      "identity": "Thủ lĩnh của Đội hiệp sĩ Diệt Rồng, anh trai cùng cha khác mẹ của Radu.",
+      "type": "character",
+      "first_seen": 108
+    },
+    {
+      "name_en": "Duke Dragulia",
+      "name_vi": "Công tước Dragulia",
+      "identity": "Thân vương Huyết Long, cha của Mirshea và Radu, người đứng đầu gia tộc Dragulia mang dòng máu rồng.",
+      "type": "character",
+      "first_seen": 108
+    },
+    {
+      "name_en": "Dragonslayer Knights",
+      "name_vi": "Đội hiệp sĩ Diệt Rồng",
+      "identity": "Đội hiệp sĩ dưới sự dẫn dắt của Mirshea, có biểu tượng vệt đen cắt ngang cổ rồng.",
+      "type": "faction",
+      "first_seen": 108
+    },
+    {
+      "name_en": "Dragulia Family",
+      "name_vi": "Gia tộc Dragulia",
+      "identity": "Gia tộc trung ương nổi tiếng thừa kế dòng máu rồng thực sự.",
+      "type": "faction",
+      "first_seen": 108
+    },
+    {
+      "name_en": "Bishop Pedro",
+      "name_vi": "Giám mục Pedro",
+      "identity": "Giám mục của Soara, người đang tranh giành quyền kiểm soát Soara với Joseph và đã mời Radu đến.",
+      "type": "character",
+      "first_seen": 108
+    },
+    {
+      "name_en": "Peter",
+      "name_vi": "Peter",
+      "identity": "Cha của Joseph, người đã gửi mảnh giấy cảnh báo ngầm cho con trai mình.",
+      "type": "character",
+      "first_seen": 108
+    },
+    {
+      "name_en": "Baron Utman",
+      "name_vi": "Baron Utman",
+      "identity": "Một vị nam tước ở phương Bắc, chủ nhân của thành phố Mosiah.",
+      "type": "character",
+      "first_seen": 108
+    },
+    {
+      "name_en": "Mosiah",
+      "name_vi": "Mosiah",
+      "identity": "Thành phố thuộc lãnh địa của Baron Utman ở phương Bắc, nơi quân lính giáo hội đang tập hợp.",
+      "type": "location",
+      "first_seen": 108
+    },
+    {
+      "name_en": "Vatican",
+      "name_vi": "Tòa thánh",
+      "identity": "Tổ chức tôn giáo trung ương mà các giáo hội phương Bắc trực thuộc.",
+      "type": "faction",
+      "first_seen": 108
+    },
+    {
+      "name_en": "Count Vitskaya",
+      "name_vi": "Bá tước Vitskaya",
+      "identity": "Một bá tước ở phương Bắc, người đã tiếp đón và chất vấn Vlad về chiến tích diệt rồng khi mới 17 tuổi.",
+      "type": "character",
+      "first_seen": 109
+    },
+    {
+      "name_en": "Vitskaya",
+      "name_vi": "Vitskaya",
+      "identity": "Lãnh địa phương Bắc thuộc quyền cai trị của gia tộc Bá tước Vitskaya.",
+      "type": "location",
+      "first_seen": 109
+    },
+    {
+      "name_en": "Lindworm",
+      "name_vi": "Lindworm",
+      "identity": "Con rồng nhanh nhất phương Bắc mà Vlad đã săn được khi mới 17 tuổi.",
+      "type": "character",
+      "first_seen": 109
+    },
+    {
+      "name_en": "Alicia",
+      "name_vi": "Alicia",
+      "identity": "Người đã nhìn thấy viên đá hổ phách chứa đựng khung cảnh mùa thu thông qua thế giới của giọng nói vô danh",
+      "type": "character",
+      "first_seen": 110
+    },
+    {
+      "name_en": "Varadis",
+      "name_vi": "Varadis",
+      "identity": "Một tộc nhân tinh linh (elf) đi cùng cô bé mắt vàng kim, có đôi mắt màu xanh biển sâu",
+      "type": "character",
+      "first_seen": 112
+    },
+    {
+      "name_en": "San Rogino",
+      "name_vi": "San Rogino",
+      "identity": "Giáo phận phía Bắc nơi ghi chép lại công trạng bảo vệ trẻ em của Vlad",
+      "type": "location",
+      "first_seen": 112
+    },
+    {
+      "name_en": "The Count",
+      "name_vi": "Bá tước",
+      "identity": "A man with deep wrinkles on his dry face, whose city's main industry was threatened by the unknown man, and to whom Vlad reported after the battle.",
+      "type": "character",
+      "first_seen": 113
+    },
+    {
+      "name_en": "Frausen",
+      "name_vi": "Frausen",
+      "identity": "Vị vua lập quốc đầu tiên của đế quốc, người luôn yêu thương và trân trọng tiềm năng của thế hệ trẻ",
+      "type": "character",
+      "first_seen": 114
+    },
+    {
+      "name_en": "Geronimo",
+      "name_vi": "Geronimo",
+      "identity": "Vị đại trưởng lão cao tuổi nhất của tộc tinh linh, người nhận ra phong cảnh trong viên đá hổ phách",
+      "type": "character",
+      "first_seen": 117
+    },
+    {
+      "name_en": "August",
+      "name_vi": "August",
+      "identity": "Hiệp sĩ đi cùng Vlad, người đã cống hiến cả đời cho đế quốc",
+      "type": "character",
+      "first_seen": 117
+    },
+    {
+      "name_en": "Hainal family",
+      "name_vi": "Gia tộc Hainal",
+      "identity": "Gia tộc sở hữu di vật là viên đá hổ phách",
+      "type": "faction",
+      "first_seen": 117
+    },
+    {
+      "name_en": "Ausurin",
+      "name_vi": "Ausurin",
+      "identity": "Vùng đất của tộc tinh linh, nơi có đội tuần tra bảo vệ vùng ngoại vi",
+      "type": "location",
+      "first_seen": 118
+    },
+    {
+      "name_en": "Nidhogg",
+      "name_vi": "Nidhogg",
+      "identity": "Con rồng ẩn mình trong bóng tối, đang thèm khát dòm ngó Cây Thế Giới",
+      "type": "character",
+      "first_seen": 118
+    },
+    {
+      "name_en": "World Tree",
+      "name_vi": "Cây Thế Giới",
+      "identity": "Cây đại thụ thiêng liêng sắp sửa nở hoa",
+      "type": "location",
+      "first_seen": 118
+    },
+    {
+      "name_en": "Elves",
+      "name_vi": "Tinh linh",
+      "identity": "Chủng tộc có vẻ ngoài thanh tao, tai dài nhọn, có khứu giác nhạy bén và đang canh gác vùng Ausurin",
+      "type": "faction",
+      "first_seen": 118
+    },
+    {
+      "name_en": "Absilon",
+      "name_vi": "Absilon",
+      "identity": "Chuyến xe ngựa của các tinh linh, nguồn cơn của sự ác ý xanh thẳm bắt nguồn từ phương Đông",
+      "type": "faction",
+      "first_seen": 119
+    },
+    {
+      "name_en": "Empire",
+      "name_vi": "Đế quốc",
+      "identity": "Thế lực loài người hùng mạnh đã xua đuổi các tinh linh ra khỏi khu rừng, gieo rắc nguyên tội",
+      "type": "faction",
+      "first_seen": 119
+    },
+    {
+      "name_en": "Rutiger",
+      "name_vi": "Rutiger",
+      "identity": "Chủ nhân cũ của thanh kiếm mà Vlad đang sử dụng",
+      "type": "character",
+      "first_seen": 121
+    },
+    {
+      "name_en": "Brigantes",
+      "name_vi": "Brigantes",
+      "identity": "Thủ đô nơi gia tộc Dragulia lưu trữ các ghi chép toàn diện về thợ săn rồng.",
+      "type": "location",
+      "first_seen": 124
+    },
+    {
+      "name_en": "Ramund",
+      "name_vi": "Ramund",
+      "identity": "Người đã đưa cho Vlad đồng tiền vàng (ducat) trước đó.",
+      "type": "character",
+      "first_seen": 124
+    },
+    {
+      "name_en": "Timur Baranov",
+      "name_vi": "Timur Baranov",
+      "identity": "Công tước duy nhất của phương Bắc, thợ rèn thép, người đứng đầu gia tộc Baranov bảo hộ lời thề",
+      "type": "character",
+      "first_seen": 125
+    },
+    {
+      "name_en": "Devious",
+      "name_vi": "Devious",
+      "identity": "Phó tế được Đội hiệp sĩ Diệt Rồng phái đến để thương thảo đòi mảnh rồng từ Timur Baranov",
+      "type": "character",
+      "first_seen": 125
+    },
+    {
+      "name_en": "Romanov",
+      "name_vi": "Romanov",
+      "identity": "Gia tộc ở phương Tây đã lụi tàn, từng canh giữ các mảnh rồng trước khi chúng được đưa về phương Bắc",
+      "type": "faction",
+      "first_seen": 125
+    },
+    {
+      "name_en": "Northern Union",
+      "name_vi": "Liên minh phương Bắc",
+      "identity": "Liên minh từng lớn mạnh ở phương Bắc mà gia tộc Utman từng là một trụ cột",
+      "type": "faction",
+      "first_seen": 125
+    },
+    {
+      "name_en": "Wisteria Village",
+      "name_vi": "Làng Wisteria",
+      "identity": "Ngôi làng quê hương của Goth (Goethe), nơi cậu đã rời bỏ để đi tìm cơ hội đổi đời do sự nghèo đói",
+      "type": "location",
+      "first_seen": 127
+    },
+    {
+      "name_en": "Goethe's mother",
+      "name_vi": "Mẹ của Goth",
+      "identity": "Người mẹ nghèo khó của Goth tại làng Wisteria, người đã tiếp đón Vlad và Goth bằng một bữa ăn giản dị",
+      "type": "character",
+      "first_seen": 127
+    },
+    {
+      "name_en": "Marie",
+      "name_vi": "Marie",
+      "identity": "Em gái của Goethe (Goth), cô dâu trong đám cưới",
+      "type": "character",
+      "first_seen": 129
+    },
+    {
+      "name_en": "Marcia",
+      "name_vi": "Marcia",
+      "identity": "Nơi chú rể có người thân, nơi gia đình Goethe tạm thời lánh nạn sau đám cưới",
+      "type": "location",
+      "first_seen": 129
+    },
+    {
+      "name_en": "Stefan",
+      "name_vi": "Stefan",
+      "identity": "Một nhân vật xuất hiện ở cuối chương, nhìn Vlad với vẻ bối rối",
+      "type": "character",
+      "first_seen": 129
+    },
+    {
+      "name_en": "Colin",
+      "name_vi": "Colin",
+      "identity": "Một hiệp sĩ sở hữu long lực mạnh mẽ từ Pylos, đang giao đấu với Vlad",
+      "type": "character",
+      "first_seen": 130
+    },
+    {
+      "name_en": "Joubert",
+      "name_vi": "Joubert",
+      "identity": "Một hiệp sĩ ung dung tự tại đang chứng kiến trận quyết đấu",
+      "type": "character",
+      "first_seen": 130
+    },
+    {
+      "name_en": "Pylos",
+      "name_vi": "Pylos",
+      "identity": "Một vùng đất hoặc thế lực gắn liền với sức mạnh của rồng (long lực)",
+      "type": "location",
+      "first_seen": 130
+    },
+    {
+      "name_en": "Holy See",
+      "name_vi": "Tòa thánh",
+      "identity": "Thế lực tôn giáo tối cao đứng sau Giám mục Pedro, đang phối hợp cùng Đội hiệp sĩ Diệt Rồng",
+      "type": "faction",
+      "first_seen": 131
+    },
+    {
+      "name_en": "Dragon Blood Prince",
+      "name_vi": "Thân vương Huyết Long",
+      "identity": "Danh hiệu của người đứng đầu mang huyết thống rồng, cha của Radu Dragulia",
+      "type": "character",
+      "first_seen": 131
+    },
+    {
+      "name_en": "Alicia Hainal",
+      "name_vi": "Alicia Hainal",
+      "identity": "Vị tiểu thư quý tộc sở hữu mái tóc màu xanh biển tuyệt đẹp, người đứng đầu gia tộc Hainal đang lâm vào cảnh kiệt quệ lực lượng.",
+      "type": "character",
+      "first_seen": 132
+    },
+    {
+      "name_en": "Duncan",
+      "name_vi": "Duncan",
+      "identity": "Người hầu cận hoặc cố vấn thân cận bên cạnh Alicia Hainal.",
+      "type": "character",
+      "first_seen": 132
+    },
+    {
+      "name_en": "Gaidar",
+      "name_vi": "Gaidar",
+      "identity": "Thế lực hoặc kẻ đứng đầu phương Tây, đối thủ quân sự hùng mạnh mà gia tộc Hainal phải đối mặt.",
+      "type": "faction",
+      "first_seen": 132
+    },
+    {
+      "name_en": "Stephen",
+      "name_vi": "Stefan",
+      "identity": "A sturdy, threatening man searching for the remnants of the Ravnoma family, described as a 'dragon dog' by the old knight.",
+      "type": "character",
+      "first_seen": 133
+    },
+    {
+      "name_en": "Ravnoma",
+      "name_vi": "Ravnoma",
+      "identity": "The true ruling family of the West, currently defeated but still highly respected and remembered.",
+      "type": "faction",
+      "first_seen": 133
+    },
+    {
+      "name_en": "Northern crow",
+      "name_vi": "Quạ phương Bắc",
+      "identity": "A mysterious northern faction or entity mentioned by the old knight.",
+      "type": "faction",
+      "first_seen": 133
+    },
+    {
+      "name_en": "Hainal",
+      "name_vi": "Hainal",
+      "identity": "Gia tộc hoặc thế lực mà Alicia trực thuộc",
+      "type": "faction",
+      "first_seen": 135
+    },
+    {
+      "name_en": "Varna",
+      "name_vi": "Varna",
+      "identity": "Địa danh nơi Joseph và Vlad gặp nhau lần đầu trong cuộc thảo phạt quái vật",
+      "type": "location",
+      "first_seen": 135
+    },
+    {
+      "name_en": "Agge",
+      "name_vi": "Agge",
+      "identity": "Một người đàn ông cởi trần với vẻ mặt nghiêm nghị đang đối đầu với Vlad trong doanh trại",
+      "type": "character",
+      "first_seen": 135
+    },
+    {
+      "name_en": "Trinova",
+      "name_vi": "Trinova",
+      "identity": "Thủ đô của Gaidar, nằm ở phương Tây",
+      "type": "location",
+      "first_seen": 137
+    },
+    {
+      "name_en": "Sigmund Gaidar",
+      "name_vi": "Sigmund Gaidar",
+      "identity": "Bá tước Gaidar, người đứng đầu gia tộc Gaidar ở phương Tây",
+      "type": "character",
+      "first_seen": 137
+    },
+    {
+      "name_en": "Gaidar Family",
+      "name_vi": "Gia tộc Gaidar",
+      "identity": "Gia tộc thế lực ở phương Tây do Bá tước Sigmund Gaidar đứng đầu",
+      "type": "faction",
+      "first_seen": 137
+    },
+    {
+      "name_en": "Godin",
+      "name_vi": "Godin",
+      "identity": "Thuộc hạ thân cận bên cạnh Bá tước Gaidar",
+      "type": "character",
+      "first_seen": 137
+    },
+    {
+      "name_en": "Stephan",
+      "name_vi": "Stefan",
+      "identity": "Một người đồng hành hoặc cấp dưới của Vlad, người trả lời câu hỏi của Vlad về đứa trẻ",
+      "type": "character",
+      "first_seen": 138
+    },
+    {
+      "name_en": "Karl Ravnoma",
+      "name_vi": "Karl Ravnoma",
+      "identity": "Hậu duệ cuối cùng của gia tộc Bá tước Ravnoma, một cậu bé khoảng mười tuổi được giải cứu khỏi bọn buôn nô lệ",
+      "type": "character",
+      "first_seen": 138
+    },
+    {
+      "name_en": "Ravnoma Family",
+      "name_vi": "Gia tộc Ravnoma",
+      "identity": "Gia tộc Bá tước đã suy tàn, chỉ còn lại hậu duệ cuối cùng là Karl Ravnoma",
+      "type": "faction",
+      "first_seen": 138
+    },
+    {
+      "name_en": "Marcus",
+      "name_vi": "Marcus",
+      "identity": "Người đã cằn nhằn và căn dặn Vlad phải đối xử cẩn trọng với Karl Ravnoma",
+      "type": "character",
+      "first_seen": 138
+    },
+    {
+      "name_en": "Oksana",
+      "name_vi": "Oksana",
+      "identity": "Người đã tặng cho Vlad chiếc áo choàng đen ấm áp của phương Bắc",
+      "type": "character",
+      "first_seen": 138
+    },
+    {
+      "name_en": "Nasau",
+      "name_vi": "Nassau",
+      "identity": "Một trong số ít những thành phố cảng ở phương Tây",
+      "type": "location",
+      "first_seen": 139
+    },
+    {
+      "name_en": "Baron Iznik",
+      "name_vi": "Nam tước Iznik",
+      "identity": "Lãnh chúa của thành phố cảng Nassau ở phương Tây",
+      "type": "character",
+      "first_seen": 139
+    },
+    {
+      "name_en": "Rutiger Bayezid",
+      "name_vi": "Rutiger Bayezid",
+      "identity": "Một hiệp sĩ nổi tiếng của gia tộc Bayezid",
+      "type": "character",
+      "first_seen": 139
+    },
+    {
+      "name_en": "Charlotte Ravnoma",
+      "name_vi": "Charlotte Ravnoma",
+      "identity": "Hậu duệ thực sự cuối cùng của gia tộc Ravnoma, người đã phải cải trang và ẩn mình để sống sót",
+      "type": "character",
+      "first_seen": 142
+    },
+    {
+      "name_en": "Bordan",
+      "name_vi": "Bordan",
+      "identity": "Một nhân vật ngồi trên ghế khách uống trà trong văn phòng của Joseph",
+      "type": "character",
+      "first_seen": 143
+    },
+    {
+      "name_en": "Dorothea",
+      "name_vi": "Dorothea",
+      "identity": "Một thú nhân sở hữu quả cầu ma thuật, thuộc quân đội Bayezid",
+      "type": "character",
+      "first_seen": 145
+    },
+    {
+      "name_en": "Sturma",
+      "name_vi": "Sturma",
+      "identity": "Vùng đất đang bị đe dọa bởi quân đội trung ương và sắp xảy ra biến cố lớn",
+      "type": "location",
+      "first_seen": 145
+    },
+    {
+      "name_en": "Sigmund",
+      "name_vi": "Sigmund",
+      "identity": "Kẻ đã cùng Dragulia dùng mưu kế để chia rẽ quân chủ lực của Bayezid và Hainal",
+      "type": "character",
+      "first_seen": 145
+    },
+    {
+      "name_en": "Baron Alicia",
+      "name_vi": "Nam tước Alicia",
+      "identity": "Một quý tộc bị sứ giả phương Tây ép buộc phải bày tỏ sự tôn trọng thông qua hôn nhân",
+      "type": "character",
+      "first_seen": 145
+    },
+    {
+      "name_en": "Cade",
+      "name_vi": "Cade",
+      "identity": "Một hiệp sĩ sử dụng cung đang nỗ lực phòng thủ tại thành Deirmar chống lại quân Gaidar",
+      "type": "character",
+      "first_seen": 146
+    },
+    {
+      "name_en": "Northern Knights",
+      "name_vi": "Hiệp sĩ phương Bắc",
+      "identity": "Lực lượng hiệp sĩ phương Bắc bị các hiệp sĩ Gaidar khinh miệt và coi là không có gốc gác",
+      "type": "faction",
+      "first_seen": 146
+    },
+    {
+      "name_en": "Wagner",
+      "name_vi": "Wagner",
+      "identity": "Một hiệp sĩ bị mất cờ hiệu, được lệnh dẫn dắt kỵ binh của Gaidar để đẩy lùi quân địch",
+      "type": "character",
+      "first_seen": 147
+    },
+    {
+      "name_en": "Steel Lord",
+      "name_vi": "Thiết Vương",
+      "identity": "The current lord of the North, described as a formidable opponent.",
+      "type": "character",
+      "first_seen": 150
+    },
+    {
+      "name_en": "Duke Sarnus",
+      "name_vi": "Công tước Sarnus",
+      "identity": "The Dragonblood Duke (Thân vương Huyết Long), father of Radu and Mirshea.",
+      "type": "character",
+      "first_seen": 150
+    },
+    {
+      "name_en": "Eduard",
+      "name_vi": "Eduard",
+      "identity": "Một Hồng y của Tòa thánh, người đang thảo luận với Giám mục Pedro về tình hình phương Bắc và gia tộc Dragulia",
+      "type": "character",
+      "first_seen": 151
+    },
+    {
+      "name_en": "Northern Alliance",
+      "name_vi": "Liên minh phương Bắc",
+      "identity": "Thế lực phương Bắc đang thúc đẩy một giáo phái dị giáo chống lại Tòa thánh",
+      "type": "faction",
+      "first_seen": 151
+    },
+    {
+      "name_en": "Northern Orthodox Church",
+      "name_vi": "Giáo hội Chính thống phương Bắc",
+      "identity": "Giáo phái tôn giáo mới nổi lên ở phương Bắc đang đe dọa vị thế của Tòa thánh",
+      "type": "faction",
+      "first_seen": 151
+    },
+    {
+      "name_en": "Mother World Tree",
+      "name_vi": "Cây Thế Giới Mẹ",
+      "identity": "The sacred tree of the elves that once stood in the west, now a wasteland",
+      "type": "location",
+      "first_seen": 153
+    },
+    {
+      "name_en": "Vulcan",
+      "name_vi": "Vulcan",
+      "identity": "Người đã trà trộn vào để giải cứu những người lùn bị bắt làm nô lệ",
+      "type": "character",
+      "first_seen": 154
+    },
+    {
+      "name_en": "Nassau",
+      "name_vi": "Nassau",
+      "identity": "Thành phố cảng ấm áp thuộc quyền sở hữu của gia tộc Bayezid",
+      "type": "location",
+      "first_seen": 154
+    },
+    {
+      "name_en": "Budart tribe",
+      "name_vi": "Bộ tộc Budart",
+      "identity": "Bộ tộc di chuyển bằng ngựa do Agge dẫn đầu",
+      "type": "faction",
+      "first_seen": 154
+    },
+    {
+      "name_en": "Thornwood mercenaries",
+      "name_vi": "Lính đánh thuê Thornwood",
+      "identity": "Đoàn lính đánh thuê do Stephan dẫn đầu",
+      "type": "faction",
+      "first_seen": 154
+    },
+    {
+      "name_en": "World Tree Priestess",
+      "name_vi": "Nữ tư tế Cây Thế Giới",
+      "identity": "Người xuất hiện trong giấc mơ của Vlad, cố gắng bảo vệ và dẫn dắt cậu thoát khỏi bóng tối",
+      "type": "character",
+      "first_seen": 155
+    },
+    {
+      "name_en": "Hainal hills",
+      "name_vi": "ngọn đồi Hainal",
+      "identity": "Địa danh có thể nhìn thấy từ cửa sổ văn phòng của Alicia, nơi có một con bạch xà khổng lồ đang cuộn tròn",
+      "type": "location",
+      "first_seen": 155
+    },
+    {
+      "name_en": "Marcella",
+      "name_vi": "Marcella",
+      "identity": "Người quản lý quán rượu Nụ cười của hoa hồng, người dì thân thiết đã chăm sóc Jemina và Vlad",
+      "type": "character",
+      "first_seen": 158
+    },
+    {
+      "name_en": "Rose's Smile",
+      "name_vi": "Nụ cười của hoa hồng",
+      "identity": "Quán rượu nơi Jemina và Marcella làm việc tại con hẻm nhỏ ở Soara",
+      "type": "location",
+      "first_seen": 158
+    },
+    {
+      "name_en": "Sarnus",
+      "name_vi": "Sarnus",
+      "identity": "Công tước, chủ nhân của Đội hiệp sĩ Diệt Rồng, người đã bảo vệ đế quốc suốt 400 năm qua theo lời thề với vua lập quốc",
+      "type": "character",
+      "first_seen": 159
+    },
+    {
+      "name_en": "Armand",
+      "name_vi": "Armand",
+      "identity": "Vương tôn, một công tước già nua phản đối việc kế vị của vị hoàng đế nhỏ tuổi do Sarnus ủng hộ",
+      "type": "character",
+      "first_seen": 159
+    },
+    {
+      "name_en": "Quijano Frausen",
+      "name_vi": "Quijano Frausen",
+      "identity": "Vị vua lập quốc của đế quốc, được mệnh danh là Kiếm chủ (Sword Master), người đã đánh bại con rồng hoàn hảo nhất",
+      "type": "character",
+      "first_seen": 159
+    },
+    {
+      "name_en": "The young mayor of Soara",
+      "name_vi": "Thị trưởng trẻ tuổi của Soara",
+      "identity": "Thị trưởng trẻ tuổi hiện tại của thành phố Soara, người đang muốn kiểm soát toàn bộ thành phố và nhắm vào Hoover",
+      "type": "character",
+      "first_seen": 160
+    },
+    {
+      "name_en": "Holland Gate",
+      "name_vi": "Cổng Holland",
+      "identity": "Một cánh cổng thành đồ sộ, pháo đài tự nhiên nằm trong hẻm núi phong tỏa con đường dẫn vào phương Tây",
+      "type": "location",
+      "first_seen": 161
+    },
+    {
+      "name_en": "Ragmus",
+      "name_vi": "Ragmus",
+      "identity": "Cố vấn của Peter, người báo cáo về tình hình di chuyển của liên quân",
+      "type": "character",
+      "first_seen": 161
+    },
+    {
+      "name_en": "Northern Allied Forces",
+      "name_vi": "Liên quân phương Bắc",
+      "identity": "Lực lượng liên minh từ phương Bắc đang tiến xuống để hội quân cùng nhà Bayezid",
+      "type": "faction",
+      "first_seen": 161
+    },
+    {
+      "name_en": "Otar",
+      "name_vi": "Otar",
+      "identity": "Người đi cùng và giúp đỡ Haven (Harven) giữ thăng bằng trong đám đông",
+      "type": "character",
+      "first_seen": 162
+    },
+    {
+      "name_en": "Sigurd",
+      "name_vi": "Sigurd",
+      "identity": "Một người lùn đến từ vùng Nidavellir, người dẫn đầu đoàn người lùn đến Soara",
+      "type": "character",
+      "first_seen": 162
+    },
+    {
+      "name_en": "Nidavellir",
+      "name_vi": "Nidavellir",
+      "identity": "Vùng đất quê hương của người lùn Sigurd",
+      "type": "location",
+      "first_seen": 162
+    },
+    {
+      "name_en": "Sarnus Dragulia",
+      "name_vi": "Sarnus Dragulia",
+      "identity": "Một quý tộc tóc vàng thuộc gia tộc Dragulia, thực chất là một con rồng già nua đang âm thầm lên kế hoạch thu hoạch hạt giống gieo ở phương Bắc.",
+      "type": "character",
+      "first_seen": 163
+    },
+    {
+      "name_en": "Duke Armand",
+      "name_vi": "Công tước Armand",
+      "identity": "Một công tước hành động theo ý mình, khơi mào các cuộc chiến tranh giành lãnh thổ ở vùng trung tâm.",
+      "type": "character",
+      "first_seen": 163
+    },
+    {
+      "name_en": "Bishop Andreas",
+      "name_vi": "Giám mục Andrea",
+      "identity": "Vị giám mục tại nhà thờ ở Soara mà Vlad dự định đến gặp để nhờ vả",
+      "type": "character",
+      "first_seen": 164
+    },
+    {
+      "name_en": "Andreas",
+      "name_vi": "Andrea",
+      "identity": "Vị giám mục tốt bụng đã giúp đỡ Vlad",
+      "type": "character",
+      "first_seen": 165
+    },
+    {
+      "name_en": "Gregory",
+      "name_vi": "Gregory",
+      "identity": "Một trong các hiệp sĩ đi cùng đoàn của Joseph",
+      "type": "character",
+      "first_seen": 167
+    },
+    {
+      "name_en": "Maxim",
+      "name_vi": "Maxim",
+      "identity": "Một trong các hiệp sĩ đi cùng đoàn của Joseph",
+      "type": "character",
+      "first_seen": 167
+    },
+    {
+      "name_en": "Jean",
+      "name_vi": "Jean",
+      "identity": "A young deacon accompanying Vlad on his journey, responsible for guiding and maintaining rules.",
+      "type": "character",
+      "first_seen": 169
+    },
+    {
+      "name_en": "Nibelun",
+      "name_vi": "Nibelun",
+      "identity": "A beastman wizard who wards off diseases and curses, saved from a fire by Vlad and Jean and insists on following them.",
+      "type": "character",
+      "first_seen": 169
+    },
+    {
+      "name_en": "Beastmen",
+      "name_vi": "Tộc thú nhân",
+      "identity": "A race with beast-like ears that lost their potential, referred to as 'a mystery', during the Age of Dragons.",
+      "type": "faction",
+      "first_seen": 169
+    },
+    {
+      "name_en": "White Serpent of Deirmar",
+      "name_vi": "Bạch Xà của Deomar",
+      "identity": "Một thực thể hoặc sinh vật thần thoại tại vùng Deirmar từng nhận ra giọng nói bí ẩn.",
+      "type": "character",
+      "first_seen": 175
+    },
+    {
+      "name_en": "Gunther",
+      "name_vi": "Gunther",
+      "identity": "Đội trưởng dẫn đầu buổi lễ cầu nguyện để dẫn lối cho Vlad trong giấc mơ của Jean",
+      "type": "character",
+      "first_seen": 176
+    },
+    {
+      "name_en": "Justia",
+      "name_vi": "Justia",
+      "identity": "Người cầu nguyện bên cạnh Gunther và được ông tin tưởng giao lại nhiệm vụ duy trì ánh sao dẫn đường",
+      "type": "character",
+      "first_seen": 176
+    },
+    {
+      "name_en": "Kihano",
+      "name_vi": "Quijano",
+      "identity": "Thực thể đồng hành và hỗ trợ Vlad bên trong giấc mơ của Jean",
+      "type": "character",
+      "first_seen": 176
+    },
+    {
+      "name_en": "Qliphoth tree",
+      "name_vi": "Cây Qliphoth",
+      "identity": "Cây đại diện cho lời nguyền đang ăn mòn và xâm chiếm giấc mơ của Jean",
+      "type": "location",
+      "first_seen": 176
+    },
+    {
+      "name_en": "Qliphoth",
+      "name_vi": "Qliphoth",
+      "identity": "Cây tà ác lơ lửng ngược ở trung tâm thành phố sương mù Mosiah, nguồn gốc của những giai điệu nguyền rủa.",
+      "type": "location",
+      "first_seen": 179
+    },
+    {
+      "name_en": "Aureo",
+      "name_vi": "Aureo",
+      "identity": "Họ mới của Vlad do chính Giáo hoàng nghĩ ra, trùng khớp với màu tóc hoàng kim của cậu",
+      "type": "character",
+      "first_seen": 182
+    },
+    {
+      "name_en": "Timur",
+      "name_vi": "Timur",
+      "identity": "Công tước phương Bắc với danh hiệu Thiết Vương, một trong bốn người quyền lực nhất đế quốc",
+      "type": "character",
+      "first_seen": 182
+    },
+    {
+      "name_en": "Rose’s Smile",
+      "name_vi": "Nụ cười của hoa hồng",
+      "identity": "Quán rượu được hiệp sĩ Maxim bảo vệ khỏi binh lính Tòa thánh",
+      "type": "location",
+      "first_seen": 182
+    },
+    {
+      "name_en": "Orthodox Church",
+      "name_vi": "Giáo hội Chính thống",
+      "identity": "Thế lực tôn giáo công nhận giá trị của Vlad",
+      "type": "faction",
+      "first_seen": 182
+    },
+    {
+      "name_en": "Vilmosi",
+      "name_vi": "Vilmosi",
+      "identity": "Một người đàn ông có sẹo, làm việc với các bức thư ma pháp và đang điều tra về Vlad cùng quán rượu 'Nụ cười của hoa hồng'.",
+      "type": "character",
+      "first_seen": 183
+    },
+    {
+      "name_en": "Smile of the Rose",
+      "name_vi": "Nụ cười của hoa hồng",
+      "identity": "Một quán rượu nổi tiếng nằm trong hẻm ở Soara, nơi được bảo vệ bởi Vlad và phục vụ thức ăn chất lượng cao cùng bia ale.",
+      "type": "location",
+      "first_seen": 183
+    },
+    {
+      "name_en": "The Smile of the Rose",
+      "name_vi": "Nụ cười của hoa hồng",
+      "identity": "Một quán rượu nổi tiếng, biểu tượng của thành phố Soara, nơi diễn ra cuộc gặp gỡ và chia phe của các thương nhân",
+      "type": "location",
+      "first_seen": 184
+    },
+    {
+      "name_en": "Ned",
+      "name_vi": "Ned",
+      "identity": "Cậu nhóc phục vụ có làn da ngăm đen tại quán rượu Nụ cười của hoa hồng",
+      "type": "character",
+      "first_seen": 184
+    },
+    {
+      "name_en": "One-armed Jack",
+      "name_vi": "Jack 1 tay",
+      "identity": "Một nhân vật có tiếng tăm trong quá khứ tại Soara, thường được nhắc chung thời với Jorge",
+      "type": "character",
+      "first_seen": 184
+    },
+    {
+      "name_en": "Red Rose",
+      "name_vi": "Hoa hồng đỏ",
+      "identity": "Một trong hai phe phái thương nhân chính trị tại Soara, phe mà Haven và Jemina thuộc về",
+      "type": "faction",
+      "first_seen": 184
+    },
+    {
+      "name_en": "Blue Rose",
+      "name_vi": "Hoa hồng xanh",
+      "identity": "Phe phái đối lập với phe Hoa hồng đỏ trong cuộc chiến tranh giành lợi ích thương mại",
+      "type": "faction",
+      "first_seen": 184
+    },
+    {
+      "name_en": "Lady Alicia",
+      "name_vi": "Tiểu thư Alicia",
+      "identity": "A noble lady who confronted Zemina and asked her to stay away from Vlad",
+      "type": "character",
+      "first_seen": 186
+    },
+    {
+      "name_en": "Bishop Andrea",
+      "name_vi": "Giám mục Andrea",
+      "identity": "A bishop mentioned in the Vietnamese summary of the chapter",
+      "type": "character",
+      "first_seen": 186
+    },
+    {
+      "name_en": "Baron Heinal",
+      "name_vi": "Nam tước Hainal",
+      "identity": "Một nam tước đồng hành trong đoàn lữ hành",
+      "type": "character",
+      "first_seen": 188
+    },
+    {
+      "name_en": "Bastopol",
+      "name_vi": "Bastopol",
+      "identity": "Thủ đô của Công quốc Baranov, còn được gọi là Thiết Thành (Iron City), nổi tiếng với những bức tường thành khổng lồ được đúc hoàn toàn bằng thép",
+      "type": "location",
+      "first_seen": 189
+    },
+    {
+      "name_en": "Baranov Duchy",
+      "name_vi": "Công quốc Baranov",
+      "identity": "Một công quốc phương Bắc, nơi có thủ đô Bastopol ngự trị trên các vách đá hiểm trở",
+      "type": "faction",
+      "first_seen": 189
+    },
+    {
+      "name_en": "Valkov",
+      "name_vi": "Valkov",
+      "identity": "Một thương thủ, hiệp sĩ biểu tượng của phương Bắc, đang chật vật chiến đấu chống lại Mirshea",
+      "type": "character",
+      "first_seen": 192
+    },
+    {
+      "name_en": "The Duke of Iron",
+      "name_vi": "Thiết Vương",
+      "identity": "Một nhân vật quyền lực được Sarnus nghi ngờ có liên quan đến việc rút thanh kiếm của Kiếm chủ.",
+      "type": "character",
+      "first_seen": 193
+    },
+    {
+      "name_en": "Fernand",
+      "name_vi": "Fernand",
+      "identity": "A wizard who accompanies Timur and reveals the secret passage / Vị pháp sư đi cùng Timur, người mở ra lối đi bí mật",
+      "type": "character",
+      "first_seen": 194
+    },
+    {
+      "name_en": "Imperial Guard",
+      "name_vi": "Đội cận vệ Hoàng gia",
+      "identity": "The elite guard unit commanded by August / Đội cận vệ do August chỉ huy",
+      "type": "faction",
+      "first_seen": 194
+    },
+    {
+      "name_en": "Nidavellir Dwarf Liberation Front",
+      "name_vi": "Mặt trận Giải phóng Người lùn Nidavellir",
+      "identity": "Tổ chức hoặc phong trào giải phóng của người lùn xuất hiện trong tiêu đề chương.",
+      "type": "faction",
+      "first_seen": 199
+    },
+    {
+      "name_en": "Barbosa",
+      "name_vi": "Barbosa",
+      "identity": "Một gã buôn vàng xảo quyệt, chủ nợ thực sự của Bá tước Gaidar thông qua gia tộc Huyết Long",
+      "type": "character",
+      "first_seen": 200
+    },
+    {
+      "name_en": "Dragon Blood",
+      "name_vi": "Huyết Long",
+      "identity": "Gia tộc/thế lực mà Bá tước Gaidar đã vay tiền để trang bị cho quân đội",
+      "type": "faction",
+      "first_seen": 200
+    },
+    {
+      "name_en": "Kihano Frausen",
+      "name_vi": "Quijano Frausen",
+      "identity": "Một kiếm sĩ trẻ tuổi, người chứng kiến những giây phút cuối cùng của người thợ rèn lùn vĩ đại và nhận lấy thanh kiếm Ngân Hiệp Sĩ",
+      "type": "character",
+      "first_seen": 201
+    },
+    {
+      "name_en": "Barbosa family",
+      "name_vi": "Gia tộc Barbosa",
+      "identity": "Một gia tộc quyền lực sở hữu hạm đội tàu chiến hùng hậu mang gia huy thêu chỉ vàng",
+      "type": "faction",
+      "first_seen": 202
+    },
+    {
+      "name_en": "Olmukar",
+      "name_vi": "Olmukar",
+      "identity": "Đại thủ lĩnh của Nidavellir, người dẫn dắt liên minh người lùn",
+      "type": "character",
+      "first_seen": 203
+    },
+    {
+      "name_en": "Lemnos",
+      "name_vi": "Lemnos",
+      "identity": "Hòn đảo nơi người lùn và các tinh linh đang trú ngụ, mục tiêu tấn công của Barbosa",
+      "type": "location",
+      "first_seen": 204
+    },
+    {
+      "name_en": "Baradis",
+      "name_vi": "Baradis",
+      "identity": "Thủ lĩnh của tộc tinh linh (elves), người đang đồng hành và trò chuyện cùng Vlad",
+      "type": "character",
+      "first_seen": 204
+    },
+    {
+      "name_en": "Tolbin",
+      "name_vi": "Tolbin",
+      "identity": "Chỉ huy đội thám hiểm thuộc hạm đội của Barbosa",
+      "type": "character",
+      "first_seen": 205
+    },
+    {
+      "name_en": "Golden Duke",
+      "name_vi": "Công tước Vàng",
+      "identity": "Một thế lực hoặc nhân vật lớn, kẻ đã cử hạm đội viễn chinh đến tấn công Nidavellir",
+      "type": "character",
+      "first_seen": 206
+    },
+    {
+      "name_en": "Rukhta",
+      "name_vi": "Rukhta",
+      "identity": "Người thợ rèn lão luyện của tộc người lùn, chủ nhân của xưởng rèn nơi Vlad đến mài kiếm",
+      "type": "character",
+      "first_seen": 207
+    },
+    {
+      "name_en": "Leviathan",
+      "name_vi": "Leviathan",
+      "identity": "Một con rồng cổ đại khổng lồ, có hình dáng giống mãng xà, trồi lên từ biển khơi với sức mạnh vĩ đại",
+      "type": "character",
+      "first_seen": 210
+    },
+    {
+      "name_en": "Kraken",
+      "name_vi": "Kraken",
+      "identity": "Quái vật biển khổng lồ (linh thể) xuất hiện và tàn phá các con tàu sau khi Leviathan ngã xuống.",
+      "type": "character",
+      "first_seen": 212
+    },
+    {
+      "name_en": "Count Oscar family",
+      "name_vi": "Gia tộc Bá tước Oscar",
+      "identity": "Gia tộc bên ngoại của Joseph ở vùng trung tâm, nơi anh dự định đến để tìm kiếm sự giúp đỡ",
+      "type": "faction",
+      "first_seen": 213
+    },
+    {
+      "name_en": "Baron Moldavir",
+      "name_vi": "Nam tước Moldavir",
+      "identity": "Lãnh chúa của thị trấn Kisignor, một ông lão có bộ ria mép ấn tượng và tao nhã",
+      "type": "character",
+      "first_seen": 214
+    },
+    {
+      "name_en": "Kisignor",
+      "name_vi": "Kisignor",
+      "identity": "Thị trấn do Nam tước Moldavir cai trị, nơi Vlad và Nibelun đang tiến hành điều tra",
+      "type": "location",
+      "first_seen": 214
+    },
+    {
+      "name_en": "Woman in Black",
+      "name_vi": "Người phụ nữ mặc đồ đen",
+      "identity": "Người phụ nữ bí ẩn bị mất tích cùng với Frausen",
+      "type": "character",
+      "first_seen": 214
+    },
+    {
+      "name_en": "Rodrigo",
+      "name_vi": "Rodrigo",
+      "identity": "A high-ranking knight of the Imperial Guard who confronts Vlad with an arrest warrant.",
+      "type": "character",
+      "first_seen": 215
+    },
+    {
+      "name_en": "Arnstein",
+      "name_vi": "Arnstein",
+      "identity": "Một thế lực sở hữu lực lượng kỵ binh tinh nhuệ đang truy đuổi kẻ bí ẩn",
+      "type": "faction",
+      "first_seen": 218
+    },
+    {
+      "name_en": "Pablo",
+      "name_vi": "Pablo",
+      "identity": "Một hiệp sĩ hoặc chỉ huy thuộc lực lượng Arnstein tham gia cuộc truy đuổi",
+      "type": "character",
+      "first_seen": 218
+    },
+    {
+      "name_en": "Valetta",
+      "name_vi": "Valetta",
+      "identity": "Một thành phố có những bức tường thành màu trắng đồ sộ mà Vlad đang tiến đến",
+      "type": "location",
+      "first_seen": 218
+    },
+    {
+      "name_en": "Count Arnstein",
+      "name_vi": "Bá tước Arnstein",
+      "identity": "Lãnh chúa của vùng đất nơi Vlad đang dừng chân, người đã thông báo cho Vlad về vụ bắt cóc trẻ em",
+      "type": "character",
+      "first_seen": 219
+    },
+    {
+      "name_en": "Arnstein knights",
+      "name_vi": "hiệp sĩ Arnstein",
+      "identity": "The knights running behind Vlad during the battle on the snowy plain",
+      "type": "faction",
+      "first_seen": 220
+    },
+    {
+      "name_en": "Headless Knights",
+      "name_vi": "Kỵ sĩ Không Đầu",
+      "identity": "The undead or phantom knights that Vlad is fighting and questioning about the missing children",
+      "type": "faction",
+      "first_seen": 220
+    },
+    {
+      "name_en": "Ramashut",
+      "name_vi": "Ramashut",
+      "identity": "Một thực thể hoặc nhân vật liên quan đến sự trở về của các Kỵ sĩ Không Đầu",
+      "type": "character",
+      "first_seen": 221
+    },
+    {
+      "name_en": "Grand Duke",
+      "name_vi": "Đại công tước",
+      "identity": "Một tước vị/nhân vật quyền lực bị thủ lĩnh Đội hiệp sĩ Diệt Rồng nghi ngờ là kẻ đứng sau vụ phục kích",
+      "type": "character",
+      "first_seen": 221
+    },
+    {
+      "name_en": "Baranov",
+      "name_vi": "Baranov",
+      "identity": "Tên của một hội hiệp sĩ hoặc vùng đất mà người thuộc hạ cũ của Timur từng phục vụ",
+      "type": "faction",
+      "first_seen": 222
+    },
+    {
+      "name_en": "Ramashtu",
+      "name_vi": "Ramashtu",
+      "identity": "Người phụ nữ mặc đồ đen, một thánh nữ sa ngã chọn con đường phản kháng tàn khốc chống lại thế giới",
+      "type": "character",
+      "first_seen": 224
+    },
+    {
+      "name_en": "Headless Knight",
+      "name_vi": "Kỵ sĩ Không Đầu",
+      "identity": "Kẻ không đầu đã bắt cóc trẻ em ở Arnstein và hiện đang dẫn đường cho Joseph trong bóng tối",
+      "type": "character",
+      "first_seen": 226
+    },
+    {
+      "name_en": "World Mother Tree",
+      "name_vi": "Cây Thế Giới Mẹ",
+      "identity": "Cây đại thụ thế giới cổ xưa, nơi Vlad và Kihano đang trò chuyện",
+      "type": "location",
+      "first_seen": 228
+    },
+    {
+      "name_en": "Namarka",
+      "name_vi": "Namarka",
+      "identity": "Một thành phố nằm gần phía nam của vùng trung tâm, nơi bộ tộc của Dorothea đang tạm trú",
+      "type": "location",
+      "first_seen": 229
+    },
+    {
+      "name_en": "The old woman of the Ruga tribe",
+      "name_vi": "Bà lão của bộ tộc Ruga",
+      "identity": "Một bà lão thuộc bộ tộc Ruga, người biết rõ bí mật cổ xưa về thứ đã tiêu diệt con rồng hoàn hảo nhất nhưng cố tình che giấu.",
+      "type": "character",
+      "first_seen": 231
+    },
+    {
+      "name_en": "Burgund tribe",
+      "name_vi": "Bộ tộc Burgund",
+      "identity": "Bộ tộc của Nibelun, được bà lão nhắc đến khi gọi anh là \"đứa trẻ của bộ tộc Burgund\".",
+      "type": "faction",
+      "first_seen": 231
+    },
+    {
+      "name_en": "Ruga tribe",
+      "name_vi": "Bộ tộc Ruga",
+      "identity": "Một bộ tộc cổ xưa canh giữ bí ẩn về thứ đã hạ gục con rồng hoàn hảo nhất thế gian.",
+      "type": "faction",
+      "first_seen": 231
+    },
+    {
+      "name_en": "Great Mother",
+      "name_vi": "Mẫu Thần",
+      "identity": "Một thực thể đang đối đầu trực tiếp với Vlad.",
+      "type": "character",
+      "first_seen": 232
+    },
+    {
+      "name_en": "Matriarch of the Ruga tribe",
+      "name_vi": "Đại Mẫu của tộc Ruga",
+      "identity": "Người đứng đầu bộ tộc Ruga, xuất hiện ở cuối chương truyện.",
+      "type": "character",
+      "first_seen": 233
+    },
+    {
+      "name_en": "Ruga family",
+      "name_vi": "Tộc Ruga",
+      "identity": "Gia tộc được Radu bảo toàn mạng sống sau khi thực hiện lời hứa với Vlad",
+      "type": "faction",
+      "first_seen": 234
+    },
+    {
+      "name_en": "Count Gaidar",
+      "name_vi": "Bá tước Gaidar",
+      "identity": "Một bá tước vừa dẫn quân vượt qua Cổng Holland",
+      "type": "character",
+      "first_seen": 244
+    },
+    {
+      "name_en": "Northern Expeditionary Force",
+      "name_vi": "Lực lượng Viễn chinh phương Bắc",
+      "identity": "Đoàn quân viễn chinh tiến về phương Bắc do Công tước Sarnus chỉ huy",
+      "type": "faction",
+      "first_seen": 244
+    },
+    {
+      "name_en": "Fort Holland",
+      "name_vi": "Cổng Holland",
+      "identity": "Một pháo đài tự nhiên hiểm trở trấn giữ phía tây dọc theo một hẻm núi hẹp",
+      "type": "location",
+      "first_seen": 244
+    },
+    {
+      "name_en": "Ramashthu",
+      "name_vi": "Ramashtu",
+      "identity": "Một người phụ nữ sở hữu ma pháp giúp Joseph có thể di chuyển dễ dàng trong hành lang tối tăm",
+      "type": "character",
+      "first_seen": 245
+    },
+    {
+      "name_en": "Northern Union Army",
+      "name_vi": "Liên quân phương Bắc",
+      "identity": "Thế lực quân sự đang tiến quân về phía nam, đối đầu với Huyết Long",
+      "type": "faction",
+      "first_seen": 245
+    },
+    {
+      "name_en": "Baron Salonta",
+      "name_vi": "Nam tước Salonta",
+      "identity": "Một quý tộc kiêu ngạo, bị các pháp sư bóng tối lợi dụng lòng căm thù phương Bắc để trục lợi và nhận sự ủng hộ",
+      "type": "character",
+      "first_seen": 245
+    },
+    {
+      "name_en": "Achiuk",
+      "name_vi": "Achiuk",
+      "identity": "Vùng đất chiến lược nơi quân đội của Liên minh phương Bắc đang di chuyển gần đó",
+      "type": "location",
+      "first_seen": 246
+    },
+    {
+      "name_en": "Jager",
+      "name_vi": "Jager",
+      "identity": "Người đã cung cấp thông tin cho nhóm của Vlad về pháo đài của giáo phái bóng tối",
+      "type": "character",
+      "first_seen": 246
+    },
+    {
+      "name_en": "Conrad",
+      "name_vi": "Conrad",
+      "identity": "Giáo hoàng của Giáo hội, người trực tiếp chứng kiến sự thảm khốc bên trong ngôi điện thờ đổ nát ở Achiuk",
+      "type": "character",
+      "first_seen": 247
+    },
+    {
+      "name_en": "Karoy of Harkita",
+      "name_vi": "Karoy của Harkita",
+      "identity": "Một trong những hiệp sĩ đại diện cho phương Bắc, người từng cùng Vlad chiến đấu chống lại Mirshea tại Bastopol.",
+      "type": "character",
+      "first_seen": 248
+    },
+    {
+      "name_en": "Dragonblood Duke",
+      "name_vi": "Thân vương Huyết Long",
+      "identity": "Một thế lực/nhân vật có quân đội đang tiến nhanh về phía chiến trường phương Bắc.",
+      "type": "character",
+      "first_seen": 248
+    },
+    {
+      "name_en": "Iron Duke",
+      "name_vi": "Thiết Vương",
+      "identity": "Người gửi tín hiệu bằng bồ câu trắng để điều động quân đội",
+      "type": "character",
+      "first_seen": 255
+    },
+    {
+      "name_en": "Blood Dragon Army",
+      "name_vi": "Đội quân Huyết Long",
+      "identity": "Đội quân do Công tước Sarnus dẫn đầu",
+      "type": "faction",
+      "first_seen": 255
+    },
+    {
+      "name_en": "Kihano Frausén",
+      "name_vi": "Kihano Frausén",
+      "identity": "Một nhân vật được Sarnus nhắc đến, người từng ngáng đường Sarnus trong quá khứ.",
+      "type": "character",
+      "first_seen": 259
+    },
+    {
+      "name_en": "Pablo of Arnstein",
+      "name_vi": "Pablo của vùng Arnstein",
+      "identity": "Một vị hiệp sĩ Kiếm chủ, người đã chọn nghĩa vụ bảo vệ tiềm năng của Vlad thay vì danh dự cá nhân",
+      "type": "character",
+      "first_seen": 260
+    },
+    {
+      "name_en": "Beacon of the Rose",
+      "name_vi": "Nụ cười của hoa hồng",
+      "identity": "Kỹ viện bốn tầng nằm trong con hẻm tối tăm ở Soara, nơi Vlad lớn lên",
+      "type": "location",
+      "first_seen": 261
+    },
+    {
+      "name_en": "Knight of Prostitutes",
+      "name_vi": "Hiệp sĩ của những cô gái điếm",
+      "identity": "Một trong những người thành lập nên kỹ viện \"Nụ cười của hoa hồng\"",
+      "type": "character",
+      "first_seen": 261
+    },
+    {
+      "name_en": "Rose of Soara",
+      "name_vi": "Đóa hồng của Soara",
+      "identity": "Một trong những người thành lập nên kỹ viện \"Nụ cười của hoa hồng\"",
+      "type": "character",
+      "first_seen": 261
+    }
+  ]
+}

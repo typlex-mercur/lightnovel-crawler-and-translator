@@ -1,0 +1,7 @@
+raw_chapters/
+lightnovel-reader/
+__pycache__/
+*.pyc
+.env
+.system_generated/
+translate_progress.txt

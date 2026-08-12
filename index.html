@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tinh Tú Kiếm Sĩ – Reader</title>
+    <meta name="description" content="Đọc truyện Tinh Tú Kiếm Sĩ (Star-Embracing Swordmaster)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0c0e14;
+            --bg-secondary: #141620;
+            --bg-card: #1a1d2e;
+            --bg-card-hover: #1f2338;
+            --bg-sidebar: #111320;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #818cf8;
+            --accent-glow: rgba(129, 140, 248, 0.15);
+            --accent-border: rgba(129, 140, 248, 0.3);
+            --border: #1e2235;
+            --border-light: #2a2f45;
+            --gold: #fbbf24;
+            --rose: #fb7185;
+            --emerald: #34d399;
+            --sky: #38bdf8;
+            --sidebar-width: 320px;
+            --nav-height: 60px;
+            --font-body: 'Noto Serif', Georgia, serif;
+            --font-ui: 'Inter', -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            font-family: var(--font-ui);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            overscroll-behavior-y: none;
+        }
+
+        /* ========== SCROLLBAR ========== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+        /* ========== TOP NAV BAR ========== */
+        .nav-bar {
+            position: fixed; top: 0; left: 0; right: 0;
+            height: var(--nav-height);
+            background: rgba(12, 14, 20, 0.85);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 16px;
+            z-index: 100;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav-bar.hidden {
+            transform: translateY(-100%);
+        }
+
+        .nav-title {
+            font-size: 15px; font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--sky));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            letter-spacing: -0.3px;
+            white-space: nowrap;
+        }
+
+        .nav-center { display: flex; align-items: center; gap: 8px; flex: 1; justify-content: center; }
+
+        .chapter-select {
+            background: var(--bg-card); color: var(--text-primary);
+            border: 1px solid var(--border-light); padding: 8px 12px;
+            border-radius: 8px; font-size: 14px; font-weight: 600;
+            max-width: 180px; outline: none; cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .chapter-select:focus { border-color: var(--accent); }
+
+        .icon-btn {
+            background: none; border: none; color: var(--text-muted);
+            padding: 10px; border-radius: 8px; font-size: 20px; cursor: pointer;
+            transition: color 0.2s, background 0.2s;
+        }
+        .icon-btn:hover { color: var(--accent); background: var(--accent-glow); }
+        .icon-btn.active { color: var(--accent); background: var(--accent-glow); }
+
+        /* ========== LAYOUT ========== */
+        .layout {
+            display: flex;
+            margin-top: var(--nav-height);
+            min-height: calc(100vh - var(--nav-height));
+        }
+
+        /* ========== MAIN CONTENT ========== */
+        .main-content {
+            flex: 1; max-width: 800px; margin: 0 auto;
+            padding: 32px 20px 80px;
+        }
+
+        .chapter-segment {
+            margin-bottom: 60px;
+        }
+
+        .chapter-header {
+            margin-bottom: 32px; padding-bottom: 16px;
+        }
+        .chapter-header h1 {
+            font-family: var(--font-ui); font-size: 28px; font-weight: 700;
+            color: var(--text-primary); line-height: 1.4;
+            letter-spacing: -0.5px;
+        }
+        .chapter-header .chapter-meta {
+            margin-top: 8px; font-size: 14px; color: var(--accent); font-weight: 500;
+        }
+
+        .chapter-body {
+            font-family: var(--font-body); font-size: 19px; line-height: 1.85;
+            color: #d1d5db;
+        }
+        .chapter-body p { margin-bottom: 20px; text-align: justify; }
+
+        .chapter-divider {
+            border: none;
+            border-top: 1px solid var(--border-light);
+            margin: 60px 20%;
+            opacity: 0.5;
+        }
+
+        /* Không làm đậm tên riêng, chỉ đổi con trỏ chuột trên PC */
+        .chapter-body .highlight-term { cursor: pointer; }
+
+        /* Màn hình loading nhỏ ở đáy khi scroll */
+        .chapter-loading {
+            text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 15px; font-weight: 500;
+        }
+        .spinner {
+            width: 32px; height: 32px; border: 3px solid var(--border-light);
+            border-top-color: var(--accent); border-radius: 50%;
+            animation: spin 0.8s linear infinite; margin: 0 auto 16px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ========== CUSTOM TOOLTIP FOR MOBILE & PC ========== */
+        .custom-tooltip {
+            position: absolute; background: var(--bg-card-hover); color: var(--text-primary);
+            border: 1px solid var(--accent-border); border-radius: 10px;
+            padding: 14px 16px; font-family: var(--font-ui); font-size: 14px; line-height: 1.5;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 1000; max-width: 300px; width: max-content;
+            pointer-events: none; opacity: 0; transition: opacity 0.2s, transform 0.2s;
+            transform: translateY(10px); display: none;
+        }
+        .custom-tooltip.show { display: block; opacity: 1; transform: translateY(0); }
+        .ct-name { font-weight: 700; color: var(--accent); margin-bottom: 6px; display: block; font-size: 15px; }
+
+        /* ========== SCROLL TO TOP BTN ========== */
+        .btn-top {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 50px; height: 50px; border-radius: 25px;
+            background: var(--bg-card); color: var(--accent);
+            border: 1px solid var(--border-light);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            font-size: 24px; display: none; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 99; transition: background 0.2s, transform 0.2s;
+        }
+        .btn-top:hover { background: var(--bg-card-hover); transform: translateY(-3px); }
+        .btn-top:active { transform: translateY(0); }
+
+        /* ========== SIDEBAR (GLOSSARY) ========== */
+        .sidebar {
+            width: var(--sidebar-width); background: var(--bg-sidebar);
+            border-left: 1px solid var(--border);
+            position: fixed; right: 0; top: var(--nav-height);
+            height: calc(100vh - var(--nav-height));
+            overflow-y: auto; padding: 20px;
+            transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 90; box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+        }
+        .sidebar.open { transform: translateX(0); }
+
+        .sidebar-header {
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
+        }
+        .sidebar-header h2 { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+
+        .sidebar-search {
+            width: 100%; padding: 12px; background: var(--bg-primary); border: 1px solid var(--border-light);
+            border-radius: 8px; color: var(--text-primary); font-size: 14px; outline: none; margin-bottom: 20px;
+        }
+        .sidebar-search:focus { border-color: var(--accent); }
+
+        .glossary-list { display: flex; flex-direction: column; gap: 10px; }
+        .glossary-card {
+            background: var(--bg-card); border: 1px solid var(--border-light);
+            border-radius: 10px; padding: 14px; transition: border-color 0.2s;
+        }
+        .glossary-card:hover { border-color: var(--accent-border); }
+        .glossary-card .gc-name { font-size: 15px; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+        .glossary-card .gc-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* MOBILE OVERRIDES */
+        @media (max-width: 600px) {
+            .nav-bar { padding: 0 10px; }
+            .nav-title { display: none; }
+            .chapter-select { max-width: 200px; padding: 8px; font-size: 15px; }
+            .chapter-header h1 { font-size: 24px; }
+            .chapter-body { font-size: 17.5px; }
+            .sidebar { width: 100%; }
+            .btn-top { bottom: 20px; right: 20px; width: 44px; height: 44px; font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- TOP NAV -->
+    <nav class="nav-bar" id="nav-bar">
+        <div class="nav-title" id="nav-title-text">✦ Tinh Tú Kiếm Sĩ</div>
+        <div class="nav-center">
+            <select class="chapter-select" id="chapter-select" onchange="jumpToChapter(parseInt(this.value))">
+                <option value="0">Đang tải...</option>
+            </select>
+        </div>
+        <button class="icon-btn" id="btn-glossary" onclick="toggleSidebar()">📖</button>
+    </nav>
+
+    <!-- LAYOUT -->
+    <div class="layout">
+        <!-- MAIN CONTENT -->
+        <main class="main-content" id="main-content">
+            <div id="chapters-wrapper"></div>
+            
+            <div class="chapter-loading" id="loading" style="display:none">
+                <div class="spinner"></div> Đang tải chương tiếp theo...
+            </div>
+            
+            <!-- Triggers infinity scroll -->
+            <div id="scroll-trigger" style="height: 10px; margin-top: 40px;"></div>
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>📖 Bảng Thuật Ngữ</h2>
+                <button class="icon-btn" onclick="toggleSidebar()">✕</button>
+            </div>
+            <input type="text" class="sidebar-search" id="glossary-search" placeholder="Tìm tên nhân vật, thế lực..." oninput="renderGlossary()">
+            <div class="glossary-list" id="glossary-list"></div>
+        </aside>
+    </div>
+
+    <!-- CUSTOM TOOLTIP -->
+    <div id="custom-tooltip" class="custom-tooltip"></div>
+    
+    <!-- SCROLL TO TOP -->
+    <button id="btn-top" class="btn-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+
+    <script>
+        let availableChapters = [];
+        let maxLoadedChapter = 0;
+        let isLoading = false;
+        
+        let glossaryData = [];
+        let termsMap = {};
+        let regexPattern = null;
+        let sidebarOpen = false;
+
+        const TOTAL_CHAPTERS = 261;
+
+        async function init() {
+            // Setup chapter list array
+            for (let i = 1; i <= TOTAL_CHAPTERS; i++) {
+                availableChapters.push(i);
+            }
+            populateSelect();
+
+            await loadGlossary();
+            
+            // Load initial chapter (from URL hash or default to 1)
+            let startChap = 1;
+            if (window.location.hash) {
+                const hashChap = parseInt(window.location.hash.replace('#chap', ''));
+                if (hashChap >= 1 && hashChap <= TOTAL_CHAPTERS) startChap = hashChap;
+            }
+            await loadChapter(startChap, false);
+
+            setupObservers();
+            setupInteractions();
+        }
+
+        function populateSelect() {
+            const select = document.getElementById('chapter-select');
+            select.innerHTML = '';
+            availableChapters.forEach(ch => {
+                const opt = document.createElement('option');
+                opt.value = ch;
+                opt.textContent = `Chương ${ch}`;
+                select.appendChild(opt);
+            });
+        }
+
+        async function loadChapter(chapNum, append = false) {
+            if (isLoading || chapNum > TOTAL_CHAPTERS) return;
+            isLoading = true;
+            document.getElementById('loading').style.display = 'block';
+
+            if (!append) {
+                document.getElementById('chapters-wrapper').innerHTML = '';
+                maxLoadedChapter = chapNum;
+            } else {
+                maxLoadedChapter = chapNum;
+            }
+
+            const num = String(chapNum).padStart(3, '0');
+            try {
+                const res = await fetch(`translated_chapters/chapter_${num}.txt`);
+                if (!res.ok) throw new Error();
+                let text = await res.text();
+
+                let title = `Chương ${chapNum}`;
+                const lines = text.split('\n');
+                if (lines[0].startsWith('#')) {
+                    title = lines[0].replace(/^#+\s*/, '');
+                    text = lines.slice(1).join('\n').trim();
+                }
+
+                const htmlText = text.split(/\r?\n+/).filter(p => p.trim()).map(p => `<p>${escapeHtml(p.trim())}</p>`).join('\n');
+                
+                const segment = document.createElement('div');
+                segment.className = 'chapter-segment';
+                segment.setAttribute('data-chapter', chapNum);
+                segment.innerHTML = `
+                    <div class="chapter-header">
+                        <h1>${title}</h1>
+                        <div class="chapter-meta">Chương ${chapNum} / ${TOTAL_CHAPTERS}</div>
+                    </div>
+                    <div class="chapter-body">${htmlText}</div>
+                    ${chapNum < TOTAL_CHAPTERS ? '<hr class="chapter-divider" />' : '<div style="text-align:center; padding: 40px; color: var(--accent);">HẾT TRUYỆN</div>'}
+                `;
+
+                document.getElementById('chapters-wrapper').appendChild(segment);
+                
+                highlightTermsInNode(segment);
+                segmentObserver.observe(segment);
+
+                if (!append) {
+                    window.scrollTo(0, 0);
+                    updateActiveChapter(chapNum);
+                }
+
+            } catch (error) {
+                if (!append) {
+                    document.getElementById('chapters-wrapper').innerHTML = `<div style="color:var(--rose); text-align:center; padding: 40px;">Lỗi tải Chương ${chapNum}.<br/>Hãy chắc chắn rằng file tồn tại.</div>`;
+                }
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+                isLoading = false;
+            }
+        }
+
+        function jumpToChapter(chapNum) {
+            loadChapter(chapNum, false);
+            window.location.hash = `chap${chapNum}`;
+        }
+
+        function updateActiveChapter(chapNum) {
+            document.getElementById('chapter-select').value = chapNum;
+            if (!window.location.hash.includes(`chap${chapNum}`)) {
+                history.replaceState(null, null, `#chap${chapNum}`);
+            }
+        }
+
+        // --- OBSERVERS FOR INFINITE SCROLL ---
+        let segmentObserver, scrollTriggerObserver;
+        function setupObservers() {
+            // Theo dõi các đoạn chương để đổi tên chương trên thanh điều hướng
+            segmentObserver = new IntersectionObserver((entries) => {
+                // Find the visible segment that covers the most area
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
+                        const chap = parseInt(entry.target.getAttribute('data-chapter'));
+                        updateActiveChapter(chap);
+                    }
+                });
+            }, { threshold: [0.1, 0.5] });
+
+            // Theo dõi thẻ đáy để tải tiếp chương
+            scrollTriggerObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !isLoading && maxLoadedChapter < TOTAL_CHAPTERS) {
+                    loadChapter(maxLoadedChapter + 1, true);
+                }
+            }, { rootMargin: "0px 0px 800px 0px" }); // Tải trước khi chạm đáy 800px
+
+            scrollTriggerObserver.observe(document.getElementById('scroll-trigger'));
+        }
+
+        // --- UI & INTERACTIONS ---
+        function setupInteractions() {
+            const main = document.getElementById('main-content');
+            
+            // Xử lý Click (Cho Mobile) & Đóng Tooltip
+            main.addEventListener('click', function(e) {
+                const termEl = e.target.closest('.highlight-term');
+                if (termEl) {
+                    e.stopPropagation();
+                    const desc = termEl.getAttribute('data-desc');
+                    const name = termEl.getAttribute('data-name');
+                    if (desc) showTooltip(termEl, name, desc);
+                } else {
+                    hideTooltip();
+                }
+            });
+
+            // Xử lý Hover (Cho PC)
+            main.addEventListener('mouseover', function(e) {
+                if (window.matchMedia("(pointer: coarse)").matches) return; // Bỏ qua nếu là màn hình cảm ứng
+                const termEl = e.target.closest('.highlight-term');
+                if (termEl) {
+                    const desc = termEl.getAttribute('data-desc');
+                    const name = termEl.getAttribute('data-name');
+                    if (desc) showTooltip(termEl, name, desc);
+                }
+            });
+
+            main.addEventListener('mouseout', function(e) {
+                if (window.matchMedia("(pointer: coarse)").matches) return;
+                const termEl = e.target.closest('.highlight-term');
+                if (termEl) hideTooltip();
+            });
+
+            // Ẩn thanh điều hướng và Tooltip khi Scroll
+            let lastScroll = 0;
+            const nav = document.getElementById('nav-bar');
+            const btnTop = document.getElementById('btn-top');
+            
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                // Ẩn hiện Nav
+                if (currentScroll > lastScroll && currentScroll > 150) {
+                    nav.classList.add('hidden');
+                    hideTooltip();
+                } else {
+                    nav.classList.remove('hidden');
+                }
+                
+                // Hiện nút Lên đầu trang
+                btnTop.style.display = currentScroll > 800 ? 'flex' : 'none';
+                
+                lastScroll = currentScroll;
+            }, { passive: true });
+
+            // Cuộn sidebar khi touch (Mobile)
+            let touchStartX = 0;
+            document.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX, { passive: true });
+            document.addEventListener('touchend', e => {
+                if (sidebarOpen && (e.changedTouches[0].clientX - touchStartX > 60)) toggleSidebar();
+            });
+        }
+
+        // --- GLOSSARY LOGIC ---
+        async function loadGlossary() {
+            try {
+                const res = await fetch('glossary.json');
+                const data = await res.json();
+                glossaryData = data.entries || [];
+                buildGlossaryRegex();
+                renderGlossary();
+            } catch (e) {}
+        }
+
+        function buildGlossaryRegex() {
+            const names = [];
+            termsMap = {};
+            
+            function addAlias(alias, entry) {
+                if (!alias || alias.length < 3) return;
+                const lower = alias.toLowerCase();
+                if (!termsMap[lower]) {
+                    termsMap[lower] = entry;
+                    names.push(alias);
+                }
+            }
+
+            for (const entry of glossaryData) {
+                const nameEn = entry.name_en || '';
+                const nameVi = entry.name_vi || nameEn;
+                if (nameVi.length >= 2) addAlias(nameVi, entry);
+                
+                const prefixes = ['gia tộc', 'băng đảng', 'gia đình', 'vương quốc', 'thành phố', 'đế quốc', 'nhà', 'đội trưởng', 'thuyền trưởng', 'thiếu chủ', 'hiệp sĩ', 'nam tước', 'bá tước', 'lãnh chúa', 'giám mục', 'linh mục', 'đội', 'bà chủ', 'ông chủ'];
+                let coreName = nameVi;
+                for (const p of prefixes) {
+                    if (coreName.toLowerCase().startsWith(p + ' ')) {
+                        coreName = coreName.substring(p.length + 1).trim();
+                        break;
+                    }
+                }
+                if (coreName !== nameVi && coreName.length >= 2) addAlias(coreName, entry);
+
+                if (entry.type === 'character' && coreName.includes(' ')) {
+                    const parts = coreName.split(' ');
+                    if (/^[A-ZÀ-Ỹ]/.test(parts[0])) addAlias(parts[0], entry);
+                    if (/^[A-ZÀ-Ỹ]/.test(parts[parts.length - 1])) addAlias(parts[parts.length - 1], entry);
+                }
+            }
+
+            if (names.length) {
+                names.sort((a, b) => b.length - a.length);
+                const pattern = names.map(escapeRegex).join('|');
+                regexPattern = new RegExp(`(?<![\\wÀ-ỹ])(${pattern})(?![\\wÀ-ỹ])`, 'gi');
+            }
+        }
+
+        function highlightTermsInNode(node) {
+            if (!regexPattern) return;
+            const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null, false);
+            const nodes = [];
+            while (walker.nextNode()) nodes.push(walker.currentNode);
+
+            nodes.forEach(n => {
+                if (n.parentNode && n.parentNode.classList.contains('highlight-term')) return;
+                const text = n.nodeValue;
+                if (!regexPattern.test(text)) return;
+                
+                regexPattern.lastIndex = 0;
+                let lastIndex = 0;
+                let match;
+                const frag = document.createDocumentFragment();
+                
+                while ((match = regexPattern.exec(text)) !== null) {
+                    if (match.index > lastIndex) {
+                        frag.appendChild(document.createTextNode(text.substring(lastIndex, match.index)));
+                    }
+                    const matchedName = match[0];
+                    const entry = termsMap[matchedName.toLowerCase()];
+                    const span = document.createElement('span');
+                    span.className = 'highlight-term';
+                    span.setAttribute('data-name', entry ? (entry.name_en || entry.name_vi) : '');
+                    span.setAttribute('data-desc', entry ? (entry.identity || '') : '');
+                    span.textContent = matchedName;
+                    frag.appendChild(span);
+                    lastIndex = regexPattern.lastIndex;
+                }
+                if (lastIndex < text.length) {
+                    frag.appendChild(document.createTextNode(text.substring(lastIndex)));
+                }
+                n.parentNode.replaceChild(frag, n);
+            });
+        }
+
+        function renderGlossary() {
+            const list = document.getElementById('glossary-list');
+            const search = document.getElementById('glossary-search').value.toLowerCase();
+            let filtered = glossaryData;
+            if (search) {
+                filtered = filtered.filter(e =>
+                    (e.name_en || '').toLowerCase().includes(search) || (e.name_vi || '').toLowerCase().includes(search)
+                );
+            }
+            list.innerHTML = filtered.map(e => `
+                <div class="glossary-card">
+                    <div class="gc-name">${escapeHtml(e.name_en)}</div>
+                    <div class="gc-desc">${escapeHtml(e.identity || '')}</div>
+                </div>
+            `).join('');
+        }
+
+        function toggleSidebar() {
+            sidebarOpen = !sidebarOpen;
+            document.getElementById('sidebar').classList.toggle('open', sidebarOpen);
+        }
+
+        // --- TOOLTIP LOGIC ---
+        function showTooltip(el, name, desc) {
+            const tooltip = document.getElementById('custom-tooltip');
+            tooltip.innerHTML = `<span class="ct-name">${escapeHtml(name)}</span>${escapeHtml(desc)}`;
+            tooltip.classList.add('show');
+            
+            const rect = el.getBoundingClientRect();
+            let top = rect.bottom + window.scrollY + 8;
+            let left = rect.left + window.scrollX;
+            
+            if (left + 300 > window.innerWidth) {
+                left = window.innerWidth - 310;
+                if (left < 10) left = 10;
+            }
+            
+            tooltip.style.top = top + 'px';
+            tooltip.style.left = left + 'px';
+        }
+
+        function hideTooltip() {
+            document.getElementById('custom-tooltip').classList.remove('show');
+        }
+
+        // --- UTILS ---
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        function escapeRegex(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
