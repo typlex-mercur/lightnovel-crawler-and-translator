@@ -282,6 +282,9 @@
 
             await loadGlossary();
             
+            setupObservers();
+            setupInteractions();
+
             // Load initial chapter (from URL hash or default to 1)
             let startChap = 1;
             if (window.location.hash) {
@@ -289,9 +292,6 @@
                 if (hashChap >= 1 && hashChap <= TOTAL_CHAPTERS) startChap = hashChap;
             }
             await loadChapter(startChap, false);
-
-            setupObservers();
-            setupInteractions();
         }
 
         function populateSelect() {
