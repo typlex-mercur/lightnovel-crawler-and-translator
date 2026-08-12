@@ -30,6 +30,7 @@
             --nav-height: 60px;
             --font-body: 'Noto Serif', Georgia, serif;
             --font-ui: 'Inter', -apple-system, sans-serif;
+            --font-size-body: 18px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -122,7 +123,9 @@
         }
 
         .chapter-body {
-            font-family: var(--font-body); font-size: 19px; line-height: 1.85;
+            font-family: var(--font-body);
+            font-size: var(--font-size-body);
+            line-height: 1.85;
             color: #d1d5db;
         }
         .chapter-body p { margin-bottom: 20px; text-align: justify; }
@@ -206,6 +209,37 @@
         .glossary-card .gc-name { font-size: 15px; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
         .glossary-card .gc-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
 
+        /* ========== SETTINGS MODAL ========== */
+        .settings-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+            z-index: 1000; display: none; opacity: 0; transition: opacity 0.3s;
+        }
+        .settings-modal {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -45%);
+            background: var(--bg-card); border: 1px solid var(--border-light);
+            border-radius: 16px; width: 90%; max-width: 360px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            z-index: 1001; display: none; opacity: 0; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 20px;
+        }
+        .settings-modal.show { display: block; opacity: 1; transform: translate(-50%, -50%); }
+        .settings-overlay.show { display: block; opacity: 1; }
+        
+        .sm-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--border-light); padding-bottom: 12px; }
+        .sm-header h3 { font-size: 18px; color: var(--text-primary); }
+        .setting-group { margin-bottom: 20px; }
+        .setting-group label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        .font-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .font-btn { padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border-light); color: var(--text-primary); border-radius: 8px; cursor: pointer; transition: 0.2s; font-size: 15px; }
+        .font-btn.active { background: var(--accent-glow); border-color: var(--accent); color: var(--accent); }
+        
+        .size-controls { display: flex; align-items: center; justify-content: space-between; background: var(--bg-secondary); border-radius: 8px; padding: 4px; border: 1px solid var(--border-light); }
+        .size-btn { width: 44px; height: 44px; background: transparent; border: none; color: var(--text-primary); font-size: 18px; font-weight: 600; cursor: pointer; border-radius: 6px; transition: 0.2s; display: flex; align-items: center; justify-content: center; }
+        .size-btn:hover { background: var(--bg-card-hover); color: var(--accent); }
+        #font-size-display { font-size: 16px; font-weight: 600; color: var(--accent); font-family: var(--font-ui); }
+
         /* MOBILE OVERRIDES */
         @media (max-width: 600px) {
             .nav-bar { padding: 0 10px; }
@@ -227,7 +261,10 @@
                 <option value="0">Đang tải...</option>
             </select>
         </div>
-        <button class="icon-btn" id="btn-glossary" onclick="toggleSidebar()">📖</button>
+        <div style="display:flex; gap: 4px;">
+            <button class="icon-btn" id="btn-settings" onclick="toggleSettings()">⚙️</button>
+            <button class="icon-btn" id="btn-glossary" onclick="toggleSidebar()">📖</button>
+        </div>
     </nav>
 
     <!-- LAYOUT -->
@@ -258,6 +295,34 @@
     <!-- CUSTOM TOOLTIP -->
     <div id="custom-tooltip" class="custom-tooltip"></div>
     
+    <!-- SETTINGS MODAL -->
+    <div id="settings-overlay" class="settings-overlay" onclick="toggleSettings()"></div>
+    <div id="settings-modal" class="settings-modal">
+        <div class="sm-header">
+            <h3>⚙️ Tùy Chỉnh Đọc</h3>
+            <button class="icon-btn" onclick="toggleSettings()">✕</button>
+        </div>
+        <div class="sm-body">
+            <div class="setting-group">
+                <label>Phông chữ</label>
+                <div class="font-options">
+                    <button class="font-btn active" data-font="'Noto Serif', Georgia, serif" style="font-family: 'Noto Serif', serif">Noto Serif</button>
+                    <button class="font-btn" data-font="'Inter', sans-serif" style="font-family: 'Inter', sans-serif">Inter</button>
+                    <button class="font-btn" data-font="Arial, sans-serif" style="font-family: Arial, sans-serif">Arial</button>
+                    <button class="font-btn" data-font="'Courier New', Courier, monospace" style="font-family: 'Courier New', monospace">Monospace</button>
+                </div>
+            </div>
+            <div class="setting-group">
+                <label>Cỡ chữ</label>
+                <div class="size-controls">
+                    <button class="size-btn" onclick="changeFontSize(-1)">A-</button>
+                    <span id="font-size-display">18px</span>
+                    <button class="size-btn" onclick="changeFontSize(1)">A+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- SCROLL TO TOP -->
     <button id="btn-top" class="btn-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
 
@@ -272,6 +337,8 @@
         let sidebarOpen = false;
 
         const TOTAL_CHAPTERS = 261;
+        let currentFontSize = 18;
+        let settingsOpen = false;
 
         async function init() {
             // Setup chapter list array
@@ -282,6 +349,7 @@
 
             await loadGlossary();
             
+            setupSettings();
             setupObservers();
             setupInteractions();
 
