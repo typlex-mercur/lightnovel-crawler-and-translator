@@ -994,10 +994,12 @@
                 // Prefetch đoạn tiếp theo
                 if (idx + 1 < tts.items.length) {
                     const ni = idx + 1;
-                    ttsFetch(tts.items[ni].text).then(u => {
-                        tts.prefetchUrl = u;
-                        tts.prefetchIdx = ni;
-                    });
+                    ttsFetch(tts.items[ni].text)
+                        .then(u => {
+                            tts.prefetchUrl = u;
+                            tts.prefetchIdx = ni;
+                        })
+                        .catch(err => console.warn('Prefetch failed:', err));
                 }
 
                 if (tts.audio) { tts.audio.pause(); tts.audio.src = ''; }
@@ -1007,12 +1009,21 @@
                     if (tts.playing) { tts.idx++; ttsPlayAt(tts.idx); }
                 };
                 tts.audio.onerror = () => {
+                    console.error('Audio playback error on index', idx);
                     URL.revokeObjectURL(url);
-                    if (tts.playing) { tts.idx++; ttsPlayAt(tts.idx); }
+                    // Dừng phát nếu lỗi thay vì skip điên cuồng
+                    tts.playing = false;
+                    tts.paused = false;
+                    ttsUpdateUI();
+                    alert("Có lỗi khi phát âm thanh (mạng chậm hoặc server Render bị quá tải). Vui lòng bấm ▶ lại.");
                 };
                 await tts.audio.play();
             } catch (e) {
                 console.error('TTS error:', e);
+                tts.playing = false;
+                tts.paused = false;
+                ttsUpdateUI();
+                alert("Lỗi tải giọng đọc: " + e.message + "\nServer Render có thể đang bị quá tải, hãy thử lại.");
             } finally {
                 playBtn.classList.remove('loading');
             }

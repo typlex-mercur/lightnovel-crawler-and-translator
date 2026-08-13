@@ -96,7 +96,7 @@ if __name__ == "__main__":
     if sys.stdout.encoding != "utf-8":
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     os.chdir(DIRECTORY)
-    with http.server.HTTPServer(("", PORT), QuietHandler) as httpd:
+    with http.server.ThreadingHTTPServer(("", PORT), QuietHandler) as httpd:
         print(f"==================================================")
         print(f"  Light Novel Reader đang chạy!                 ")
         print(f"  -> http://localhost:{PORT}                       ")
