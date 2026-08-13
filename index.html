@@ -295,13 +295,6 @@
 
         .tts-right { display: flex; align-items: center; gap: 4px; margin-left: auto; }
 
-        .tts-voice-select {
-            background: var(--bg-card); color: var(--text-primary);
-            border: 1px solid var(--border-light); padding: 6px 8px;
-            border-radius: 6px; font-size: 12px; font-family: var(--font-ui);
-            outline: none; cursor: pointer;
-        }
-
         .tts-reading {
             background: var(--accent-glow) !important;
             border-left: 3px solid var(--accent) !important;
@@ -322,7 +315,6 @@
             .sidebar { width: 100%; }
             .btn-top { bottom: 20px; right: 20px; width: 44px; height: 44px; font-size: 20px; }
             .tts-controls { padding: 8px 10px; gap: 4px; }
-            .tts-voice-select { display: none; }
             .tts-info { font-size: 12px; }
             .tts-btn { font-size: 16px; padding: 6px; min-width: 32px; height: 32px; }
             .tts-btn-play { width: 38px; height: 38px; font-size: 18px; }
@@ -398,13 +390,6 @@
                     <button class="size-btn" onclick="changeFontSize(1)">A+</button>
                 </div>
             </div>
-            <div class="setting-group">
-                <label>Giọng đọc (TTS)</label>
-                <div class="font-options">
-                    <button class="font-btn tts-voice-btn active" data-voice="vi-VN-HoaiMyNeural">HoaiMy ♀</button>
-                    <button class="font-btn tts-voice-btn" data-voice="vi-VN-NamMinhNeural">NamMinh ♂</button>
-                </div>
-            </div>
         </div>
     </div>
     
@@ -420,10 +405,6 @@
             <span class="tts-info" id="tts-info">Nhấn ▶ để bắt đầu đọc</span>
             <div class="tts-right">
                 <button class="tts-btn tts-btn-speed" id="tts-speed-btn" onclick="ttsChangeSpeed()" title="Tốc độ đọc">1.0x</button>
-                <select class="tts-voice-select" id="tts-voice-select" onchange="ttsChangeVoice(this.value)">
-                    <option value="vi-VN-HoaiMyNeural">HoaiMy ♀</option>
-                    <option value="vi-VN-NamMinhNeural">NamMinh ♂</option>
-                </select>
                 <button class="tts-btn" onclick="ttsStop()" title="Dừng">⏹</button>
             </div>
         </div>
@@ -433,15 +414,6 @@
     <button id="btn-top" class="btn-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
 
     <script>
-        // =====================================================================
-        // CẤU HÌNH API TTS
-        // =====================================================================
-        // Nếu bạn host giao diện trên GitHub Pages và host backend (serve.py) trên 
-        // một dịch vụ khác (như Render.com), hãy đổi biến này thành URL của Render.
-        // Ví dụ: const TTS_API_URL = 'https://my-tts-backend.onrender.com/api/tts';
-        const TTS_API_URL = 'https://lightnovel-tts.onrender.com/api/tts';
-        // =====================================================================
-
         let availableChapters = [];
         let maxLoadedChapter = 0;
         let isLoading = false;
@@ -819,20 +791,6 @@
             });
             const sizeDisplay = document.getElementById('font-size-display');
             if (sizeDisplay) sizeDisplay.innerText = currentFontSize + 'px';
-
-            const voiceBtns = document.querySelectorAll('.tts-voice-btn');
-            const savedVoice = localStorage.getItem('ttsVoice') || 'vi-VN-HoaiMyNeural';
-            voiceBtns.forEach(btn => {
-                if (btn.getAttribute('data-voice') === savedVoice) {
-                    voiceBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                }
-                btn.addEventListener('click', (e) => {
-                    voiceBtns.forEach(b => b.classList.remove('active'));
-                    e.currentTarget.classList.add('active');
-                    ttsChangeVoice(e.currentTarget.getAttribute('data-voice'));
-                });
-            });
         }
 
         function changeFontSize(delta) {
@@ -861,19 +819,14 @@
             idx: 0,
             items: [],
             audio: null,
-            prefetchUrl: null,
-            prefetchIdx: -1,
             chapNum: 0,
-            voice: localStorage.getItem('ttsVoice') || 'vi-VN-HoaiMyNeural',
-            rates: ['-20%', '-10%', '+0%', '+10%', '+20%', '+30%', '+50%'],
-            rateLabels: ['0.8x', '0.9x', '1.0x', '1.1x', '1.2x', '1.3x', '1.5x'],
+            rates: [0.8, 0.9, 1.0, 1.1, 1.25, 1.5, 2.0],
+            rateLabels: ['0.8x', '0.9x', '1.0x', '1.1x', '1.25x', '1.5x', '2.0x'],
             rateIdx: parseInt(localStorage.getItem('ttsSpeedIdx') || '2'),
             visible: false,
         };
 
         function ttsInit() {
-            const sel = document.getElementById('tts-voice-select');
-            if (sel) sel.value = tts.voice;
             document.getElementById('tts-speed-btn').textContent = tts.rateLabels[tts.rateIdx];
         }
 
@@ -886,19 +839,54 @@
             if (tts.visible && !tts.playing) ttsCollect();
         }
 
+        function _splitTextForGoogleTTS(text) {
+            // Google TTS giới hạn ~200 chars. Ta tách câu dựa trên . hoặc ,
+            const chunks = [];
+            let currentChunk = "";
+            const words = text.split(/(?<=[.,!?;])\s+/); // tách theo câu/cụm từ
+            
+            for (let w of words) {
+                if (!w.trim()) continue;
+                if (currentChunk.length + w.length < 180) {
+                    currentChunk += (currentChunk ? " " : "") + w;
+                } else {
+                    if (currentChunk) chunks.push(currentChunk);
+                    // Nếu bản thân 1 từ/câu vẫn dài hơn 200, ép cắt
+                    if (w.length >= 180) {
+                        let i = 0;
+                        while(i < w.length) {
+                            chunks.push(w.substring(i, i + 180));
+                            i += 180;
+                        }
+                        currentChunk = "";
+                    } else {
+                        currentChunk = w;
+                    }
+                }
+            }
+            if (currentChunk) chunks.push(currentChunk);
+            return chunks;
+        }
+
         function ttsCollect() {
             const chapNum = parseInt(document.getElementById('chapter-select').value);
             tts.chapNum = chapNum;
             const seg = document.querySelector(`.chapter-segment[data-chapter="${chapNum}"]`);
             if (!seg) return;
             tts.items = [];
-            // Tiêu đề chương đọc trước
+            
             const h1 = seg.querySelector('.chapter-header h1');
-            if (h1) tts.items.push({ text: h1.textContent.trim(), el: h1 });
-            // Rồi đọc từng đoạn văn
+            if (h1) {
+                const chunks = _splitTextForGoogleTTS(h1.textContent.trim());
+                chunks.forEach(c => tts.items.push({ text: c, el: h1 }));
+            }
+            
             seg.querySelectorAll('.chapter-body p').forEach(p => {
                 const t = p.textContent.trim();
-                if (t) tts.items.push({ text: t, el: p });
+                if (t) {
+                    const chunks = _splitTextForGoogleTTS(t);
+                    chunks.forEach(c => tts.items.push({ text: c, el: p }));
+                }
             });
             tts.idx = 0;
             ttsUpdateUI();
@@ -910,7 +898,6 @@
             } else if (tts.paused && tts.audio) {
                 ttsResume();
             } else {
-                // Bắt đầu hoặc tiếp tục từ vị trí hiện tại
                 if (!tts.items.length) ttsCollect();
                 if (!tts.items.length) return;
                 tts.playing = true;
@@ -927,14 +914,16 @@
         }
 
         function ttsResume() {
-            if (tts.audio) tts.audio.play();
+            if (tts.audio) {
+                tts.audio.playbackRate = tts.rates[tts.rateIdx];
+                tts.audio.play();
+            }
             tts.paused = false;
             ttsUpdateUI();
         }
 
         function ttsStop() {
             if (tts.audio) { tts.audio.pause(); tts.audio.src = ''; tts.audio = null; }
-            if (tts.prefetchUrl) { URL.revokeObjectURL(tts.prefetchUrl); tts.prefetchUrl = null; }
             tts.playing = false;
             tts.paused = false;
             tts.idx = 0;
@@ -968,7 +957,6 @@
 
         async function ttsPlayAt(idx) {
             if (idx >= tts.items.length) {
-                // Hết chương → tự động sang chương tiếp
                 await ttsNextChapter();
                 return;
             }
@@ -977,53 +965,35 @@
             ttsHighlight(item.el);
 
             const playBtn = document.getElementById('tts-play-btn');
-            const hasPrefetch = tts.prefetchUrl && tts.prefetchIdx === idx;
-            if (!hasPrefetch) playBtn.classList.add('loading');
+            playBtn.classList.add('loading');
             ttsUpdateUI();
 
             try {
-                let url;
-                if (hasPrefetch) {
-                    url = tts.prefetchUrl;
-                    tts.prefetchUrl = null;
-                    tts.prefetchIdx = -1;
-                } else {
-                    url = await ttsFetch(item.text);
-                }
-
-                // Prefetch đoạn tiếp theo
-                if (idx + 1 < tts.items.length) {
-                    const ni = idx + 1;
-                    ttsFetch(tts.items[ni].text)
-                        .then(u => {
-                            tts.prefetchUrl = u;
-                            tts.prefetchIdx = ni;
-                        })
-                        .catch(err => console.warn('Prefetch failed:', err));
-                }
+                const url = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(item.text)}`;
 
                 if (tts.audio) { tts.audio.pause(); tts.audio.src = ''; }
                 tts.audio = new Audio(url);
+                tts.audio.playbackRate = tts.rates[tts.rateIdx];
+                
                 tts.audio.onended = () => {
-                    URL.revokeObjectURL(url);
                     if (tts.playing) { tts.idx++; ttsPlayAt(tts.idx); }
                 };
                 tts.audio.onerror = () => {
                     console.error('Audio playback error on index', idx);
-                    URL.revokeObjectURL(url);
-                    // Dừng phát nếu lỗi thay vì skip điên cuồng
                     tts.playing = false;
                     tts.paused = false;
                     ttsUpdateUI();
-                    alert("Có lỗi khi phát âm thanh (mạng chậm hoặc server Render bị quá tải). Vui lòng bấm ▶ lại.");
+                    alert("Có lỗi khi kết nối Google TTS. Vui lòng bấm ▶ lại.");
                 };
+                
+                // Chrome/Safari yêu cầu bắt lỗi play() nếu user chưa tương tác
                 await tts.audio.play();
             } catch (e) {
                 console.error('TTS error:', e);
                 tts.playing = false;
                 tts.paused = false;
                 ttsUpdateUI();
-                alert("Lỗi tải giọng đọc: " + e.message + "\nServer Render có thể đang bị quá tải, hãy thử lại.");
+                alert("Lỗi tải giọng đọc: " + e.message);
             } finally {
                 playBtn.classList.remove('loading');
             }
@@ -1032,24 +1002,11 @@
         async function ttsNextChapter() {
             const next = tts.chapNum + 1;
             if (next > TOTAL_CHAPTERS) { ttsStop(); return; }
-            // Tải chương mới và lưu tiến trình
             await loadChapter(next, false);
             updateActiveChapter(next);
             history.replaceState(null, null, `#chap${next}`);
-            // Thu thập đoạn văn chương mới và đọc từ tiêu đề
             ttsCollect();
             await ttsPlayAt(0);
-        }
-
-        async function ttsFetch(text) {
-            const res = await fetch(TTS_API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text, voice: tts.voice, rate: tts.rates[tts.rateIdx] })
-            });
-            if (!res.ok) throw new Error('TTS API: ' + res.status);
-            const blob = await res.blob();
-            return URL.createObjectURL(blob);
         }
 
         function ttsHighlight(el) {
@@ -1086,16 +1043,9 @@
             tts.rateIdx = (tts.rateIdx + 1) % tts.rates.length;
             document.getElementById('tts-speed-btn').textContent = tts.rateLabels[tts.rateIdx];
             localStorage.setItem('ttsSpeedIdx', tts.rateIdx);
-        }
-
-        function ttsChangeVoice(v) {
-            tts.voice = v;
-            localStorage.setItem('ttsVoice', v);
-            document.querySelectorAll('.tts-voice-btn').forEach(b => {
-                b.classList.toggle('active', b.getAttribute('data-voice') === v);
-            });
-            const sel = document.getElementById('tts-voice-select');
-            if (sel) sel.value = v;
+            if (tts.audio) {
+                tts.audio.playbackRate = tts.rates[tts.rateIdx];
+            }
         }
 
         window.onload = init;
