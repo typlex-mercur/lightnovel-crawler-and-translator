@@ -240,84 +240,7 @@
         .size-btn:hover { background: var(--bg-card-hover); color: var(--accent); }
         #font-size-display { font-size: 16px; font-weight: 600; color: var(--accent); font-family: var(--font-ui); }
 
-        /* ========== TTS PLAYER BAR ========== */
-        .tts-player {
-            position: fixed; bottom: 0; left: 0; right: 0;
-            background: rgba(20, 22, 32, 0.95);
-            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-            border-top: 1px solid var(--border-light);
-            z-index: 100;
-            transform: translateY(100%);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
-        }
-        .tts-player.visible { transform: translateY(0); }
-
-        .tts-progress-track { height: 3px; background: var(--border); }
-        .tts-progress-fill {
-            height: 100%; width: 0%;
-            background: linear-gradient(90deg, var(--accent), var(--sky));
-            transition: width 0.3s;
-        }
-
-        .tts-controls {
-            display: flex; align-items: center; gap: 8px; padding: 10px 16px;
-        }
-
-        .tts-btn {
-            background: none; border: none; color: var(--text-secondary);
-            font-size: 18px; padding: 8px; border-radius: 8px; cursor: pointer;
-            transition: color 0.2s, background 0.2s;
-            display: flex; align-items: center; justify-content: center;
-            min-width: 36px; height: 36px;
-        }
-        .tts-btn:hover { color: var(--accent); background: var(--accent-glow); }
-
-        .tts-btn-play {
-            width: 44px; height: 44px; font-size: 20px;
-            background: var(--accent-glow); color: var(--accent);
-            border: 1px solid var(--accent-border); border-radius: 50%;
-        }
-        .tts-btn-play:hover { background: var(--accent); color: #fff; }
-        .tts-btn-play.loading { animation: tts-pulse 1s ease-in-out infinite; }
-        @keyframes tts-pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
-
-        .tts-btn-speed {
-            font-family: var(--font-ui); font-size: 13px; font-weight: 700;
-            min-width: 48px; color: var(--accent);
-        }
-
-        .tts-info {
-            flex: 1; font-size: 13px; color: var(--text-muted);
-            font-family: var(--font-ui); white-space: nowrap; overflow: hidden;
-            text-overflow: ellipsis; padding: 0 8px;
-        }
-
-        .tts-right { display: flex; align-items: center; gap: 4px; margin-left: auto; }
-
-        .tts-reading {
-            background: var(--accent-glow) !important;
-            border-left: 3px solid var(--accent) !important;
-            padding-left: 12px !important;
-            border-radius: 4px;
-            transition: background 0.3s, border-left 0.3s;
-        }
-
-        .main-content.tts-padded { padding-bottom: 140px; }
-
-        /* MOBILE OVERRIDES */
-        @media (max-width: 600px) {
-            .nav-bar { padding: 0 10px; }
-            .nav-title { display: none; }
-            .chapter-select { max-width: 200px; padding: 8px; font-size: 15px; }
-            .chapter-header h1 { font-size: 24px; }
-            .chapter-body { font-size: 17.5px; }
-            .sidebar { width: 100%; }
             .btn-top { bottom: 20px; right: 20px; width: 44px; height: 44px; font-size: 20px; }
-            .tts-controls { padding: 8px 10px; gap: 4px; }
-            .tts-info { font-size: 12px; }
-            .tts-btn { font-size: 16px; padding: 6px; min-width: 32px; height: 32px; }
-            .tts-btn-play { width: 38px; height: 38px; font-size: 18px; }
         }
     </style>
 </head>
@@ -331,7 +254,6 @@
             </select>
         </div>
         <div style="display:flex; gap: 4px;">
-            <button class="icon-btn" id="btn-tts" onclick="ttsTogglePlayer()" title="Đọc truyện">🔊</button>
             <button class="icon-btn" id="btn-settings" onclick="toggleSettings()">⚙️</button>
             <button class="icon-btn" id="btn-glossary" onclick="toggleSidebar()">📖</button>
         </div>
@@ -393,23 +315,8 @@
         </div>
     </div>
     
-    <!-- TTS PLAYER BAR -->
-    <div id="tts-player" class="tts-player">
-        <div class="tts-progress-track">
-            <div class="tts-progress-fill" id="tts-progress-fill"></div>
-        </div>
-        <div class="tts-controls">
-            <button class="tts-btn" onclick="ttsPrev()" title="Đoạn trước">⏮</button>
-            <button class="tts-btn tts-btn-play" id="tts-play-btn" onclick="ttsToggle()" title="Phát / Tạm dừng">▶</button>
-            <button class="tts-btn" onclick="ttsNext()" title="Đoạn tiếp">⏭</button>
-            <span class="tts-info" id="tts-info">Nhấn ▶ để bắt đầu đọc</span>
-            <div class="tts-right">
-                <button class="tts-btn tts-btn-speed" id="tts-speed-btn" onclick="ttsChangeSpeed()" title="Tốc độ đọc">1.0x</button>
-                <button class="tts-btn" onclick="ttsStop()" title="Dừng">⏹</button>
-            </div>
-        </div>
     </div>
-
+    
     <!-- SCROLL TO TOP -->
     <button id="btn-top" class="btn-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
 
@@ -439,7 +346,7 @@
             setupSettings();
             setupObservers();
             setupInteractions();
-            ttsInit();
+            setupInteractions();
 
             // Load initial chapter (from URL hash, localStorage, or default to 1)
             let startChap = 1;
@@ -528,7 +435,6 @@
         }
 
         function jumpToChapter(chapNum) {
-            if (tts.playing) ttsStop();
             loadChapter(chapNum, false);
             window.location.hash = `chap${chapNum}`;
         }
@@ -812,241 +718,7 @@
             return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         }
 
-        // ========== TTS (Text-to-Speech) ==========
-        const tts = {
-            playing: false,
-            paused: false,
-            idx: 0,
-            items: [],
-            audio: null,
-            chapNum: 0,
-            rates: [0.8, 0.9, 1.0, 1.1, 1.25, 1.5, 2.0],
-            rateLabels: ['0.8x', '0.9x', '1.0x', '1.1x', '1.25x', '1.5x', '2.0x'],
-            rateIdx: parseInt(localStorage.getItem('ttsSpeedIdx') || '2'),
-            visible: false,
-        };
-
-        function ttsInit() {
-            document.getElementById('tts-speed-btn').textContent = tts.rateLabels[tts.rateIdx];
-        }
-
-        function ttsTogglePlayer() {
-            tts.visible = !tts.visible;
-            document.getElementById('tts-player').classList.toggle('visible', tts.visible);
-            document.getElementById('main-content').classList.toggle('tts-padded', tts.visible);
-            document.getElementById('btn-tts').classList.toggle('active', tts.visible);
-            document.getElementById('btn-top').style.bottom = tts.visible ? '90px' : '30px';
-            if (tts.visible && !tts.playing) ttsCollect();
-        }
-
-        function _splitTextForGoogleTTS(text) {
-            // Google TTS giới hạn ~200 chars. Ta tách câu dựa trên . hoặc ,
-            const chunks = [];
-            let currentChunk = "";
-            const words = text.split(/(?<=[.,!?;])\s+/); // tách theo câu/cụm từ
-            
-            for (let w of words) {
-                if (!w.trim()) continue;
-                if (currentChunk.length + w.length < 180) {
-                    currentChunk += (currentChunk ? " " : "") + w;
-                } else {
-                    if (currentChunk) chunks.push(currentChunk);
-                    // Nếu bản thân 1 từ/câu vẫn dài hơn 200, ép cắt
-                    if (w.length >= 180) {
-                        let i = 0;
-                        while(i < w.length) {
-                            chunks.push(w.substring(i, i + 180));
-                            i += 180;
-                        }
-                        currentChunk = "";
-                    } else {
-                        currentChunk = w;
-                    }
-                }
-            }
-            if (currentChunk) chunks.push(currentChunk);
-            return chunks;
-        }
-
-        function ttsCollect() {
-            const chapNum = parseInt(document.getElementById('chapter-select').value);
-            tts.chapNum = chapNum;
-            const seg = document.querySelector(`.chapter-segment[data-chapter="${chapNum}"]`);
-            if (!seg) return;
-            tts.items = [];
-            
-            const h1 = seg.querySelector('.chapter-header h1');
-            if (h1) {
-                const chunks = _splitTextForGoogleTTS(h1.textContent.trim());
-                chunks.forEach(c => tts.items.push({ text: c, el: h1 }));
-            }
-            
-            seg.querySelectorAll('.chapter-body p').forEach(p => {
-                const t = p.textContent.trim();
-                if (t) {
-                    const chunks = _splitTextForGoogleTTS(t);
-                    chunks.forEach(c => tts.items.push({ text: c, el: p }));
-                }
-            });
-            tts.idx = 0;
-            ttsUpdateUI();
-        }
-
-        async function ttsToggle() {
-            if (tts.playing && !tts.paused) {
-                ttsPause();
-            } else if (tts.paused && tts.audio) {
-                ttsResume();
-            } else {
-                if (!tts.items.length) ttsCollect();
-                if (!tts.items.length) return;
-                tts.playing = true;
-                tts.paused = false;
-                ttsUpdateUI();
-                await ttsPlayAt(tts.idx);
-            }
-        }
-
-        function ttsPause() {
-            if (tts.audio) tts.audio.pause();
-            tts.paused = true;
-            ttsUpdateUI();
-        }
-
-        function ttsResume() {
-            if (tts.audio) {
-                tts.audio.playbackRate = tts.rates[tts.rateIdx];
-                tts.audio.play();
-            }
-            tts.paused = false;
-            ttsUpdateUI();
-        }
-
-        function ttsStop() {
-            if (tts.audio) { tts.audio.pause(); tts.audio.src = ''; tts.audio = null; }
-            tts.playing = false;
-            tts.paused = false;
-            tts.idx = 0;
-            ttsClearHL();
-            ttsUpdateUI();
-        }
-
-        async function ttsNext() {
-            if (tts.idx >= tts.items.length - 1) return;
-            if (tts.audio) { tts.audio.pause(); tts.audio.src = ''; tts.audio = null; }
-            tts.idx++;
-            if (tts.playing && !tts.paused) {
-                await ttsPlayAt(tts.idx);
-            } else {
-                ttsHighlight(tts.items[tts.idx].el);
-                ttsUpdateUI();
-            }
-        }
-
-        async function ttsPrev() {
-            if (tts.idx <= 0) return;
-            if (tts.audio) { tts.audio.pause(); tts.audio.src = ''; tts.audio = null; }
-            tts.idx--;
-            if (tts.playing && !tts.paused) {
-                await ttsPlayAt(tts.idx);
-            } else {
-                ttsHighlight(tts.items[tts.idx].el);
-                ttsUpdateUI();
-            }
-        }
-
-        async function ttsPlayAt(idx) {
-            if (idx >= tts.items.length) {
-                await ttsNextChapter();
-                return;
-            }
-            tts.idx = idx;
-            const item = tts.items[idx];
-            ttsHighlight(item.el);
-
-            const playBtn = document.getElementById('tts-play-btn');
-            playBtn.classList.add('loading');
-            ttsUpdateUI();
-
-            try {
-                const url = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(item.text)}`;
-
-                if (tts.audio) { tts.audio.pause(); tts.audio.src = ''; }
-                tts.audio = new Audio(url);
-                tts.audio.playbackRate = tts.rates[tts.rateIdx];
-                
-                tts.audio.onended = () => {
-                    if (tts.playing) { tts.idx++; ttsPlayAt(tts.idx); }
-                };
-                tts.audio.onerror = () => {
-                    console.error('Audio playback error on index', idx);
-                    tts.playing = false;
-                    tts.paused = false;
-                    ttsUpdateUI();
-                    alert("Có lỗi khi kết nối Google TTS. Vui lòng bấm ▶ lại.");
-                };
-                
-                // Chrome/Safari yêu cầu bắt lỗi play() nếu user chưa tương tác
-                await tts.audio.play();
-            } catch (e) {
-                console.error('TTS error:', e);
-                tts.playing = false;
-                tts.paused = false;
-                ttsUpdateUI();
-                alert("Lỗi tải giọng đọc: " + e.message);
-            } finally {
-                playBtn.classList.remove('loading');
-            }
-        }
-
-        async function ttsNextChapter() {
-            const next = tts.chapNum + 1;
-            if (next > TOTAL_CHAPTERS) { ttsStop(); return; }
-            await loadChapter(next, false);
-            updateActiveChapter(next);
-            history.replaceState(null, null, `#chap${next}`);
-            ttsCollect();
-            await ttsPlayAt(0);
-        }
-
-        function ttsHighlight(el) {
-            ttsClearHL();
-            if (el) {
-                el.classList.add('tts-reading');
-                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }
-
-        function ttsClearHL() {
-            document.querySelectorAll('.tts-reading').forEach(e => e.classList.remove('tts-reading'));
-        }
-
-        function ttsUpdateUI() {
-            const btn = document.getElementById('tts-play-btn');
-            const info = document.getElementById('tts-info');
-            const prog = document.getElementById('tts-progress-fill');
-            btn.textContent = (tts.playing && !tts.paused) ? '⏸' : '▶';
-            const total = tts.items.length;
-            const cur = Math.min(tts.idx + 1, total);
-            if (total > 0) {
-                const txt = tts.items[Math.min(tts.idx, total - 1)]?.text || '';
-                const preview = txt.length > 35 ? txt.substring(0, 35) + '…' : txt;
-                info.textContent = `Ch.${tts.chapNum} — ${cur}/${total} — ${preview}`;
-                prog.style.width = `${(cur / total) * 100}%`;
-            } else {
-                info.textContent = 'Nhấn ▶ để bắt đầu đọc';
-                prog.style.width = '0%';
-            }
-        }
-
-        function ttsChangeSpeed() {
-            tts.rateIdx = (tts.rateIdx + 1) % tts.rates.length;
-            document.getElementById('tts-speed-btn').textContent = tts.rateLabels[tts.rateIdx];
-            localStorage.setItem('ttsSpeedIdx', tts.rateIdx);
-            if (tts.audio) {
-                tts.audio.playbackRate = tts.rates[tts.rateIdx];
-            }
-        }
+        // ==========================================
 
         window.onload = init;
     </script>
