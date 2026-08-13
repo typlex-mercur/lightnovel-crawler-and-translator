@@ -240,6 +240,14 @@
         .size-btn:hover { background: var(--bg-card-hover); color: var(--accent); }
         #font-size-display { font-size: 16px; font-weight: 600; color: var(--accent); font-family: var(--font-ui); }
 
+        /* MOBILE OVERRIDES */
+        @media (max-width: 600px) {
+            .nav-bar { padding: 0 10px; }
+            .nav-title { display: none; }
+            .chapter-select { max-width: 200px; padding: 8px; font-size: 15px; }
+            .chapter-header h1 { font-size: 24px; }
+            .chapter-body { font-size: 17.5px; }
+            .sidebar { width: 100%; }
             .btn-top { bottom: 20px; right: 20px; width: 44px; height: 44px; font-size: 20px; }
         }
     </style>
@@ -313,8 +321,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    
     </div>
     
     <!-- SCROLL TO TOP -->
