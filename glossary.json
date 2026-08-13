@@ -31,7 +31,7 @@
     {
       "name_en": "Jorge",
       "name_vi": "Jorge",
-      "identity": "Thủ lĩnh băng đảng Jorge ở khu ổ chuột, người đã dạy cho Vlad những kỹ năng chiến đấu cơ bản trước khi qua đời.",
+      "identity": "Thủ lĩnh của một băng đảng ở khu ổ chuột.",
       "type": "character",
       "first_seen": 3
     },
@@ -101,7 +101,7 @@
     {
       "name_en": "Dobrechi",
       "name_vi": "Dobrechi",
-      "identity": "A rural and secluded territory where Vlad brings the captured bandits",
+      "identity": "Một vùng lãnh thổ nông thôn hẻo lánh và biệt lập.",
       "type": "location",
       "first_seen": 103
     },
@@ -185,14 +185,14 @@
     {
       "name_en": "Bishop Pedro",
       "name_vi": "Giám mục Pedro",
-      "identity": "Giám mục của Soara, người đang tranh giành quyền kiểm soát Soara với Joseph và đã mời Radu đến.",
+      "identity": "Giám mục của vùng Soara.",
       "type": "character",
       "first_seen": 108
     },
     {
       "name_en": "Peter",
       "name_vi": "Peter",
-      "identity": "Cha của Joseph, người đã gửi mảnh giấy cảnh báo ngầm cho con trai mình.",
+      "identity": "Cha của Joseph.",
       "type": "character",
       "first_seen": 108
     },
@@ -220,7 +220,7 @@
     {
       "name_en": "Count Vitskaya",
       "name_vi": "Bá tước Vitskaya",
-      "identity": "Một bá tước ở phương Bắc, người đã tiếp đón và chất vấn Vlad về chiến tích diệt rồng khi mới 17 tuổi.",
+      "identity": "Một vị bá tước cai trị ở phương Bắc.",
       "type": "character",
       "first_seen": 109
     },
@@ -241,7 +241,7 @@
     {
       "name_en": "Alicia",
       "name_vi": "Alicia",
-      "identity": "Người đã nhìn thấy viên đá hổ phách chứa đựng khung cảnh mùa thu thông qua thế giới của giọng nói vô danh",
+      "identity": "Một cô gái có khả năng kết nối với thế giới tâm linh.",
       "type": "character",
       "first_seen": 110
     },
@@ -262,7 +262,7 @@
     {
       "name_en": "The Count",
       "name_vi": "Bá tước",
-      "identity": "A man with deep wrinkles on his dry face, whose city's main industry was threatened by the unknown man, and to whom Vlad reported after the battle.",
+      "identity": "Một vị bá tước lớn tuổi với gương mặt nhăn nheo, cai trị một thành phố công nghiệp.",
       "type": "character",
       "first_seen": 113
     },
@@ -283,7 +283,7 @@
     {
       "name_en": "August",
       "name_vi": "August",
-      "identity": "Hiệp sĩ đi cùng Vlad, người đã cống hiến cả đời cho đế quốc",
+      "identity": "Một hiệp sĩ kỳ cựu đã cống hiến cả đời cho đế quốc.",
       "type": "character",
       "first_seen": 117
     },
@@ -353,7 +353,7 @@
     {
       "name_en": "Ramund",
       "name_vi": "Ramund",
-      "identity": "Người đã đưa cho Vlad đồng tiền vàng (ducat) trước đó.",
+      "identity": "Một người đàn ông bí ẩn.",
       "type": "character",
       "first_seen": 124
     },
@@ -395,7 +395,7 @@
     {
       "name_en": "Goethe's mother",
       "name_vi": "Mẹ của Goth",
-      "identity": "Người mẹ nghèo khó của Goth tại làng Wisteria, người đã tiếp đón Vlad và Goth bằng một bữa ăn giản dị",
+      "identity": "Người mẹ nghèo khó của Goth, sinh sống tại làng Wisteria.",
       "type": "character",
       "first_seen": 127
     },
@@ -416,21 +416,21 @@
     {
       "name_en": "Stefan",
       "name_vi": "Stefan",
-      "identity": "Một nhân vật xuất hiện ở cuối chương, nhìn Vlad với vẻ bối rối",
+      "identity": "Một thanh niên trẻ tuổi.",
       "type": "character",
       "first_seen": 129
     },
     {
       "name_en": "Colin",
       "name_vi": "Colin",
-      "identity": "Một hiệp sĩ sở hữu long lực mạnh mẽ từ Pylos, đang giao đấu với Vlad",
+      "identity": "Một hiệp sĩ sở hữu long lực mạnh mẽ đến từ vùng Pylos.",
       "type": "character",
       "first_seen": 130
     },
     {
       "name_en": "Joubert",
       "name_vi": "Joubert",
-      "identity": "Một hiệp sĩ ung dung tự tại đang chứng kiến trận quyết đấu",
+      "identity": "Một hiệp sĩ có phong thái ung dung tự tại.",
       "type": "character",
       "first_seen": 130
     },
@@ -479,21 +479,21 @@
     {
       "name_en": "Stephen",
       "name_vi": "Stefan",
-      "identity": "A sturdy, threatening man searching for the remnants of the Ravnoma family, described as a 'dragon dog' by the old knight.",
+      "identity": "Một người đàn ông vạm vỡ, hung tợn, được mệnh danh là 'chó rồng'.",
       "type": "character",
       "first_seen": 133
     },
     {
       "name_en": "Ravnoma",
       "name_vi": "Ravnoma",
-      "identity": "The true ruling family of the West, currently defeated but still highly respected and remembered.",
+      "identity": "Gia tộc thống trị thực sự của phương Tây, dù đã suy tàn nhưng vẫn được kính trọng.",
       "type": "faction",
       "first_seen": 133
     },
     {
       "name_en": "Northern crow",
       "name_vi": "Quạ phương Bắc",
-      "identity": "A mysterious northern faction or entity mentioned by the old knight.",
+      "identity": "Một thế lực hoặc tổ chức bí ẩn hoạt động ở phương Bắc.",
       "type": "faction",
       "first_seen": 133
     },
@@ -514,7 +514,7 @@
     {
       "name_en": "Agge",
       "name_vi": "Agge",
-      "identity": "Một người đàn ông cởi trần với vẻ mặt nghiêm nghị đang đối đầu với Vlad trong doanh trại",
+      "identity": "Người đàn ông lực lưỡng với vẻ mặt nghiêm nghị trong doanh trại quân đội.",
       "type": "character",
       "first_seen": 135
     },
@@ -570,14 +570,14 @@
     {
       "name_en": "Marcus",
       "name_vi": "Marcus",
-      "identity": "Người đã cằn nhằn và căn dặn Vlad phải đối xử cẩn trọng với Karl Ravnoma",
+      "identity": "Một thành viên có tính cách cẩn trọng và nghiêm túc trong đoàn của Vlad.",
       "type": "character",
       "first_seen": 138
     },
     {
       "name_en": "Oksana",
       "name_vi": "Oksana",
-      "identity": "Người đã tặng cho Vlad chiếc áo choàng đen ấm áp của phương Bắc",
+      "identity": "Một người phụ nữ phương Bắc chu đáo và hiếu khách.",
       "type": "character",
       "first_seen": 138
     },
@@ -605,7 +605,7 @@
     {
       "name_en": "Charlotte Ravnoma",
       "name_vi": "Charlotte Ravnoma",
-      "identity": "Hậu duệ thực sự cuối cùng của gia tộc Ravnoma, người đã phải cải trang và ẩn mình để sống sót",
+      "identity": "Hậu duệ cuối cùng của gia tộc Ravnoma, hiện đang phải ẩn danh tính dưới một thân phận giả.",
       "type": "character",
       "first_seen": 142
     },
@@ -633,7 +633,7 @@
     {
       "name_en": "Sigmund",
       "name_vi": "Sigmund",
-      "identity": "Kẻ đã cùng Dragulia dùng mưu kế để chia rẽ quân chủ lực của Bayezid và Hainal",
+      "identity": "Đồng minh của Dragulia, một kẻ mưu mô chuyên vạch ra các kế sách chia rẽ kẻ thù.",
       "type": "character",
       "first_seen": 145
     },
@@ -668,21 +668,21 @@
     {
       "name_en": "Steel Lord",
       "name_vi": "Thiết Vương",
-      "identity": "The current lord of the North, described as a formidable opponent.",
+      "identity": "Lãnh chúa đương nhiệm của phương Bắc, một chiến binh vô cùng mạnh mẽ và đáng gờm.",
       "type": "character",
       "first_seen": 150
     },
     {
       "name_en": "Duke Sarnus",
       "name_vi": "Công tước Sarnus",
-      "identity": "The Dragonblood Duke (Thân vương Huyết Long), father of Radu and Mirshea.",
+      "identity": "Thân vương Huyết Long của đế quốc, cha của Radu và Mirshea.",
       "type": "character",
       "first_seen": 150
     },
     {
       "name_en": "Eduard",
       "name_vi": "Eduard",
-      "identity": "Một Hồng y của Tòa thánh, người đang thảo luận với Giám mục Pedro về tình hình phương Bắc và gia tộc Dragulia",
+      "identity": "Một Hồng y quyền lực của Tòa thánh, người quan tâm sâu sắc đến tình hình chính trị phương Bắc.",
       "type": "character",
       "first_seen": 151
     },
@@ -703,14 +703,14 @@
     {
       "name_en": "Mother World Tree",
       "name_vi": "Cây Thế Giới Mẹ",
-      "identity": "The sacred tree of the elves that once stood in the west, now a wasteland",
+      "identity": "Cây thần thiêng liêng của tộc tinh linh ở phía Tây, hiện chỉ còn là một vùng đất hoang tàn.",
       "type": "location",
       "first_seen": 153
     },
     {
       "name_en": "Vulcan",
       "name_vi": "Vulcan",
-      "identity": "Người đã trà trộn vào để giải cứu những người lùn bị bắt làm nô lệ",
+      "identity": "Một chiến binh quả cảm chuyên giúp đỡ và giải phóng những người lùn bị bắt làm nô lệ.",
       "type": "character",
       "first_seen": 154
     },
@@ -766,7 +766,7 @@
     {
       "name_en": "Sarnus",
       "name_vi": "Sarnus",
-      "identity": "Công tước, chủ nhân của Đội hiệp sĩ Diệt Rồng, người đã bảo vệ đế quốc suốt 400 năm qua theo lời thề với vua lập quốc",
+      "identity": "Công tước và là thủ lĩnh của Đội hiệp sĩ Diệt Rồng, người bảo hộ trung thành của đế quốc theo lời thề cổ xưa.",
       "type": "character",
       "first_seen": 159
     },
@@ -780,14 +780,14 @@
     {
       "name_en": "Quijano Frausen",
       "name_vi": "Quijano Frausen",
-      "identity": "Vị vua lập quốc của đế quốc, được mệnh danh là Kiếm chủ (Sword Master), người đã đánh bại con rồng hoàn hảo nhất",
+      "identity": "Vị vua lập quốc của đế quốc, một Kiếm chủ huyền thoại từng đánh bại con rồng hoàn hảo nhất trong lịch sử.",
       "type": "character",
       "first_seen": 159
     },
     {
       "name_en": "The young mayor of Soara",
       "name_vi": "Thị trưởng trẻ tuổi của Soara",
-      "identity": "Thị trưởng trẻ tuổi hiện tại của thành phố Soara, người đang muốn kiểm soát toàn bộ thành phố và nhắm vào Hoover",
+      "identity": "Thị trưởng trẻ tuổi đầy dã tâm của thành phố Soara, luôn tìm cách thâu tóm toàn bộ quyền lực trong vùng.",
       "type": "character",
       "first_seen": 160
     },
@@ -878,21 +878,21 @@
     {
       "name_en": "Jean",
       "name_vi": "Jean",
-      "identity": "A young deacon accompanying Vlad on his journey, responsible for guiding and maintaining rules.",
+      "identity": "Một phó tế trẻ tuổi đi theo hỗ trợ Vlad, có nhiệm vụ dẫn đường và giám sát việc thực thi các giáo luật.",
       "type": "character",
       "first_seen": 169
     },
     {
       "name_en": "Nibelun",
       "name_vi": "Nibelun",
-      "identity": "A beastman wizard who wards off diseases and curses, saved from a fire by Vlad and Jean and insists on following them.",
+      "identity": "Một pháp sư thuộc tộc thú nhân, có khả năng xua đuổi bệnh tật và nguyền rủa.",
       "type": "character",
       "first_seen": 169
     },
     {
       "name_en": "Beastmen",
       "name_vi": "Tộc thú nhân",
-      "identity": "A race with beast-like ears that lost their potential, referred to as 'a mystery', during the Age of Dragons.",
+      "identity": "Chủng tộc sở hữu đôi tai thú, từng đánh mất tiềm năng của mình trong Kỷ nguyên Rồng.",
       "type": "faction",
       "first_seen": 169
     },
@@ -1018,14 +1018,14 @@
     {
       "name_en": "Lady Alicia",
       "name_vi": "Tiểu thư Alicia",
-      "identity": "A noble lady who confronted Zemina and asked her to stay away from Vlad",
+      "identity": "Tiểu thư thuộc một gia tộc quý tộc.",
       "type": "character",
       "first_seen": 186
     },
     {
       "name_en": "Bishop Andrea",
       "name_vi": "Giám mục Andrea",
-      "identity": "A bishop mentioned in the Vietnamese summary of the chapter",
+      "identity": "Một vị giám mục trong giáo hội.",
       "type": "character",
       "first_seen": 186
     },
@@ -1053,7 +1053,7 @@
     {
       "name_en": "Valkov",
       "name_vi": "Valkov",
-      "identity": "Một thương thủ, hiệp sĩ biểu tượng của phương Bắc, đang chật vật chiến đấu chống lại Mirshea",
+      "identity": "Một thương thủ tài ba và là hiệp sĩ biểu tượng của phương Bắc.",
       "type": "character",
       "first_seen": 192
     },
@@ -1067,7 +1067,7 @@
     {
       "name_en": "Fernand",
       "name_vi": "Fernand",
-      "identity": "A wizard who accompanies Timur and reveals the secret passage / Vị pháp sư đi cùng Timur, người mở ra lối đi bí mật",
+      "identity": "Pháp sư đi cùng đoàn tùy tùng của Timur.",
       "type": "character",
       "first_seen": 194
     },
@@ -1130,7 +1130,7 @@
     {
       "name_en": "Baradis",
       "name_vi": "Baradis",
-      "identity": "Thủ lĩnh của tộc tinh linh (elves), người đang đồng hành và trò chuyện cùng Vlad",
+      "identity": "Thủ lĩnh của tộc tinh linh (elves).",
       "type": "character",
       "first_seen": 204
     },
@@ -1144,7 +1144,7 @@
     {
       "name_en": "Golden Duke",
       "name_vi": "Công tước Vàng",
-      "identity": "Một thế lực hoặc nhân vật lớn, kẻ đã cử hạm đội viễn chinh đến tấn công Nidavellir",
+      "identity": "Một nhân vật hoặc thế lực lớn đầy quyền lực.",
       "type": "character",
       "first_seen": 206
     },
@@ -1200,7 +1200,7 @@
     {
       "name_en": "Rodrigo",
       "name_vi": "Rodrigo",
-      "identity": "A high-ranking knight of the Imperial Guard who confronts Vlad with an arrest warrant.",
+      "identity": "Hiệp sĩ cấp cao thuộc đội Cận vệ Hoàng gia.",
       "type": "character",
       "first_seen": 215
     },
@@ -1228,21 +1228,21 @@
     {
       "name_en": "Count Arnstein",
       "name_vi": "Bá tước Arnstein",
-      "identity": "Lãnh chúa của vùng đất nơi Vlad đang dừng chân, người đã thông báo cho Vlad về vụ bắt cóc trẻ em",
+      "identity": "Lãnh chúa cai trị vùng đất Arnstein.",
       "type": "character",
       "first_seen": 219
     },
     {
       "name_en": "Arnstein knights",
       "name_vi": "hiệp sĩ Arnstein",
-      "identity": "The knights running behind Vlad during the battle on the snowy plain",
+      "identity": "Đội hiệp sĩ dưới quyền cai trị của Bá tước Arnstein.",
       "type": "faction",
       "first_seen": 220
     },
     {
       "name_en": "Headless Knights",
       "name_vi": "Kỵ sĩ Không Đầu",
-      "identity": "The undead or phantom knights that Vlad is fighting and questioning about the missing children",
+      "identity": "Những kỵ sĩ bất tử hoặc bóng ma không đầu.",
       "type": "faction",
       "first_seen": 220
     },
@@ -1277,7 +1277,7 @@
     {
       "name_en": "Headless Knight",
       "name_vi": "Kỵ sĩ Không Đầu",
-      "identity": "Kẻ không đầu đã bắt cóc trẻ em ở Arnstein và hiện đang dẫn đường cho Joseph trong bóng tối",
+      "identity": "Một sinh vật bất tử không đầu đầy bí ẩn.",
       "type": "character",
       "first_seen": 226
     },
@@ -1319,7 +1319,7 @@
     {
       "name_en": "Great Mother",
       "name_vi": "Mẫu Thần",
-      "identity": "Một thực thể đang đối đầu trực tiếp với Vlad.",
+      "identity": "Một thực thể thần thánh hoặc thế lực tối cao đầy quyền năng.",
       "type": "character",
       "first_seen": 232
     },
@@ -1389,7 +1389,7 @@
     {
       "name_en": "Jager",
       "name_vi": "Jager",
-      "identity": "Người đã cung cấp thông tin cho nhóm của Vlad về pháo đài của giáo phái bóng tối",
+      "identity": "Người cung cấp tin tức, có hiểu biết về địa bàn của giáo phái bóng tối.",
       "type": "character",
       "first_seen": 246
     },
@@ -1438,7 +1438,7 @@
     {
       "name_en": "Pablo of Arnstein",
       "name_vi": "Pablo của vùng Arnstein",
-      "identity": "Một vị hiệp sĩ Kiếm chủ, người đã chọn nghĩa vụ bảo vệ tiềm năng của Vlad thay vì danh dự cá nhân",
+      "identity": "Một vị hiệp sĩ Kiếm chủ xuất thân từ vùng Arnstein.",
       "type": "character",
       "first_seen": 260
     },
@@ -1480,7 +1480,7 @@
     {
       "name_en": "Alicia Heinal",
       "name_vi": "Alicia Hainal",
-      "identity": "Nữ Nam tước Hainal và là chủ nhân của vùng Deomar, người đã trao chiếc khăn tay làm bảo hiểm cho Vlad",
+      "identity": "Nữ Nam tước Hainal và là người cai trị vùng Deomar.",
       "type": "character",
       "first_seen": 66
     },
@@ -1543,7 +1543,7 @@
     {
       "name_en": "Knight of the Blue Moonlight",
       "name_vi": "Hiệp sĩ của Ánh trăng Xanh",
-      "identity": "Vị hiệp sĩ mang thế giới xanh thẳm, người đã mở ra thế giới hiệp sĩ cho đứa trẻ (Jorge/Vlad) nhưng cũng gián tiếp khiến đứa trẻ mất đi mái nhà",
+      "identity": "Vị hiệp sĩ bí ẩn mang danh hiệu Ánh trăng Xanh, người có tầm ảnh hưởng sâu sắc đến lý tưởng hiệp sĩ của Vlad.",
       "type": "character",
       "first_seen": 85
     },

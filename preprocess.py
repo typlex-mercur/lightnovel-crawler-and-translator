@@ -372,9 +372,17 @@ Trích xuất danh sách TẤT CẢ nhân vật, thế lực/gia tộc, và đ�
 YÊU CẦU:
 - Chỉ liệt kê những thứ CẦN NHỚ: tên khó, dễ nhầm, hoặc có đặc điểm nhận diện
 - KHÔNG liệt kê thuật ngữ phổ biến giữ nguyên EN (Aura, Mana, Gold...)
-- Mỗi entry phải có mô tả ĐẶC ĐIỂM NHẬN DIỆN cụ thể (không phải phân loại chung chung)
-  VD: "Jager - người hầu của Joseph, Aura màu xanh, chuyên kiếm"
-  VD: "Gia tộc Bayezid - gia tộc quý tộc cai trị vùng X, chuyên về Y"
+
+QUY TẮC VỀ MÔ TẢ (identity):
+- PHẢI viết bằng tiếng Việt, KHÔNG dùng tiếng Anh.
+- Mô tả KHÁCH QUAN về bản thân nhân vật/địa danh: ngoại hình, xuất thân, chức vụ, đặc điểm nhận diện.
+- KHÔNG mô tả hành động nhân vật làm trong chương (VD: "người đã tặng X cho Y" là SAI).
+- KHÔNG mô tả mối quan hệ với nhân vật khác trừ khi đó là đặc điểm nhận diện chính (VD: "con trai của X" là OK).
+- VÍ DỤ ĐÚNG: "Thiếu niên tóc vàng xuất thân từ khu ổ chuột, có tài năng kiếm thuật"
+- VÍ DỤ ĐÚNG: "Hiệp sĩ trẻ tuổi thuộc Đội Diệt Rồng, con trai Công tước Dragulia"
+- VÍ DỤ ĐÚNG: "Thành phố cảng phía Tây, trung tâm thương mại quan trọng"
+- VÍ DỤ SAI: "Người đã cung cấp thông tin cho nhóm của Vlad" (mô tả hành động, không khách quan)
+- VÍ DỤ SAI: "A man who confronts Vlad" (tiếng Anh, mô tả hành động)
 
 Trả về JSON đúng format:
 {{
@@ -382,7 +390,7 @@ Trả về JSON đúng format:
     {{
       "name_en": "tên tiếng Anh",
       "name_vi": "tên tiếng Việt (hoặc giữ nguyên)",
-      "identity": "mô tả đặc điểm nhận diện cụ thể",
+      "identity": "mô tả khách quan bằng tiếng Việt: ngoại hình, xuất thân, chức vụ",
       "type": "character|faction|location",
       "first_seen": số_chương_xuất_hiện_đầu_tiên
     }}

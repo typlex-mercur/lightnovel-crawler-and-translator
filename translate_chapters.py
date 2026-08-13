@@ -277,6 +277,17 @@ CHỈ liệt kê những tên QUAN TRỌNG, có vai trò trong cốt truyện.
 KHÔNG liệt kê thuật ngữ phổ biến (Aura, Mana, Sword, Knight...).
 KHÔNG liệt kê tên đã có: {', '.join(e.get('name_en','') for e in glossary.get('entries', [])[:30])}
 
+QUY TẮC VỀ MÔ TẢ (identity):
+- PHẢI viết bằng tiếng Việt, KHÔNG dùng tiếng Anh.
+- Mô tả KHÁCH QUAN về bản thân nhân vật/địa danh: ngoại hình, xuất thân, chức vụ, đặc điểm nhận diện.
+- KHÔNG mô tả hành động nhân vật làm trong chương (VD: "người đã tặng X cho Y" là SAI).
+- KHÔNG mô tả mối quan hệ với nhân vật khác trừ khi đó là đặc điểm nhận diện chính (VD: "con trai của X" là OK nếu đó là thông tin quan trọng).
+- VÍ DỤ ĐÚNG: "Thiếu niên tóc vàng xuất thân từ khu ổ chuột, có tài năng kiếm thuật"
+- VÍ DỤ ĐÚNG: "Hiệp sĩ trẻ tuổi thuộc Đội Diệt Rồng, con trai Công tước Dragulia"
+- VÍ DỤ ĐÚNG: "Thành phố cảng phía Tây, trung tâm thương mại quan trọng"
+- VÍ DỤ SAI: "Người đã cung cấp thông tin cho nhóm của Vlad"
+- VÍ DỤ SAI: "A man who confronts Vlad with an arrest warrant"
+
 [EN]:
 {raw_text[:3000]}
 
@@ -289,7 +300,7 @@ Trả về JSON. Nếu không có tên mới, trả về {{"new_entries": []}}
     {{
       "name_en": "tên EN",
       "name_vi": "tên VN (giữ nguyên nếu là tên riêng)",
-      "identity": "mô tả đặc điểm nhận diện cụ thể",
+      "identity": "mô tả khách quan bằng tiếng Việt: ngoại hình, xuất thân, chức vụ",
       "type": "character|faction|location"
     }}
   ]
