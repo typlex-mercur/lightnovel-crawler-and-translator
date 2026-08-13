@@ -240,6 +240,78 @@
         .size-btn:hover { background: var(--bg-card-hover); color: var(--accent); }
         #font-size-display { font-size: 16px; font-weight: 600; color: var(--accent); font-family: var(--font-ui); }
 
+        /* ========== TTS PLAYER BAR ========== */
+        .tts-player {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: rgba(20, 22, 32, 0.95);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid var(--border-light);
+            z-index: 100;
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+        }
+        .tts-player.visible { transform: translateY(0); }
+
+        .tts-progress-track { height: 3px; background: var(--border); }
+        .tts-progress-fill {
+            height: 100%; width: 0%;
+            background: linear-gradient(90deg, var(--accent), var(--sky));
+            transition: width 0.3s;
+        }
+
+        .tts-controls {
+            display: flex; align-items: center; gap: 8px; padding: 10px 16px;
+        }
+
+        .tts-btn {
+            background: none; border: none; color: var(--text-secondary);
+            font-size: 18px; padding: 8px; border-radius: 8px; cursor: pointer;
+            transition: color 0.2s, background 0.2s;
+            display: flex; align-items: center; justify-content: center;
+            min-width: 36px; height: 36px;
+        }
+        .tts-btn:hover { color: var(--accent); background: var(--accent-glow); }
+
+        .tts-btn-play {
+            width: 44px; height: 44px; font-size: 20px;
+            background: var(--accent-glow); color: var(--accent);
+            border: 1px solid var(--accent-border); border-radius: 50%;
+        }
+        .tts-btn-play:hover { background: var(--accent); color: #fff; }
+        .tts-btn-play.loading { animation: tts-pulse 1s ease-in-out infinite; }
+        @keyframes tts-pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+
+        .tts-btn-speed {
+            font-family: var(--font-ui); font-size: 13px; font-weight: 700;
+            min-width: 48px; color: var(--accent);
+        }
+
+        .tts-info {
+            flex: 1; font-size: 13px; color: var(--text-muted);
+            font-family: var(--font-ui); white-space: nowrap; overflow: hidden;
+            text-overflow: ellipsis; padding: 0 8px;
+        }
+
+        .tts-right { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+
+        .tts-voice-select {
+            background: var(--bg-card); color: var(--text-primary);
+            border: 1px solid var(--border-light); padding: 6px 8px;
+            border-radius: 6px; font-size: 12px; font-family: var(--font-ui);
+            outline: none; cursor: pointer;
+        }
+
+        .tts-reading {
+            background: var(--accent-glow) !important;
+            border-left: 3px solid var(--accent) !important;
+            padding-left: 12px !important;
+            border-radius: 4px;
+            transition: background 0.3s, border-left 0.3s;
+        }
+
+        .main-content.tts-padded { padding-bottom: 140px; }
+
         /* MOBILE OVERRIDES */
         @media (max-width: 600px) {
             .nav-bar { padding: 0 10px; }
@@ -249,6 +321,11 @@
             .chapter-body { font-size: 17.5px; }
             .sidebar { width: 100%; }
             .btn-top { bottom: 20px; right: 20px; width: 44px; height: 44px; font-size: 20px; }
+            .tts-controls { padding: 8px 10px; gap: 4px; }
+            .tts-voice-select { display: none; }
+            .tts-info { font-size: 12px; }
+            .tts-btn { font-size: 16px; padding: 6px; min-width: 32px; height: 32px; }
+            .tts-btn-play { width: 38px; height: 38px; font-size: 18px; }
         }
     </style>
 </head>
@@ -262,6 +339,7 @@
             </select>
         </div>
         <div style="display:flex; gap: 4px;">
+            <button class="icon-btn" id="btn-tts" onclick="ttsTogglePlayer()" title="Đọc truyện">🔊</button>
             <button class="icon-btn" id="btn-settings" onclick="toggleSettings()">⚙️</button>
             <button class="icon-btn" id="btn-glossary" onclick="toggleSidebar()">📖</button>
         </div>
@@ -320,13 +398,50 @@
                     <button class="size-btn" onclick="changeFontSize(1)">A+</button>
                 </div>
             </div>
+            <div class="setting-group">
+                <label>Giọng đọc (TTS)</label>
+                <div class="font-options">
+                    <button class="font-btn tts-voice-btn active" data-voice="vi-VN-HoaiMyNeural">HoaiMy ♀</button>
+                    <button class="font-btn tts-voice-btn" data-voice="vi-VN-NamMinhNeural">NamMinh ♂</button>
+                </div>
+            </div>
         </div>
     </div>
     
+    <!-- TTS PLAYER BAR -->
+    <div id="tts-player" class="tts-player">
+        <div class="tts-progress-track">
+            <div class="tts-progress-fill" id="tts-progress-fill"></div>
+        </div>
+        <div class="tts-controls">
+            <button class="tts-btn" onclick="ttsPrev()" title="Đoạn trước">⏮</button>
+            <button class="tts-btn tts-btn-play" id="tts-play-btn" onclick="ttsToggle()" title="Phát / Tạm dừng">▶</button>
+            <button class="tts-btn" onclick="ttsNext()" title="Đoạn tiếp">⏭</button>
+            <span class="tts-info" id="tts-info">Nhấn ▶ để bắt đầu đọc</span>
+            <div class="tts-right">
+                <button class="tts-btn tts-btn-speed" id="tts-speed-btn" onclick="ttsChangeSpeed()" title="Tốc độ đọc">1.0x</button>
+                <select class="tts-voice-select" id="tts-voice-select" onchange="ttsChangeVoice(this.value)">
+                    <option value="vi-VN-HoaiMyNeural">HoaiMy ♀</option>
+                    <option value="vi-VN-NamMinhNeural">NamMinh ♂</option>
+                </select>
+                <button class="tts-btn" onclick="ttsStop()" title="Dừng">⏹</button>
+            </div>
+        </div>
+    </div>
+
     <!-- SCROLL TO TOP -->
     <button id="btn-top" class="btn-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
 
     <script>
+        // =====================================================================
+        // CẤU HÌNH API TTS
+        // =====================================================================
+        // Nếu bạn host giao diện trên GitHub Pages và host backend (serve.py) trên 
+        // một dịch vụ khác (như Render.com), hãy đổi biến này thành URL của Render.
+        // Ví dụ: const TTS_API_URL = 'https://my-tts-backend.onrender.com/api/tts';
+        const TTS_API_URL = '/api/tts';
+        // =====================================================================
+
         let availableChapters = [];
         let maxLoadedChapter = 0;
         let isLoading = false;
@@ -352,6 +467,7 @@
             setupSettings();
             setupObservers();
             setupInteractions();
+            ttsInit();
 
             // Load initial chapter (from URL hash, localStorage, or default to 1)
             let startChap = 1;
@@ -440,6 +556,7 @@
         }
 
         function jumpToChapter(chapNum) {
+            if (tts.playing) ttsStop();
             loadChapter(chapNum, false);
             window.location.hash = `chap${chapNum}`;
         }
@@ -691,7 +808,7 @@
         }
 
         function setupSettings() {
-            const fontBtns = document.querySelectorAll('.font-btn');
+            const fontBtns = document.querySelectorAll('.font-btn[data-font]');
             fontBtns.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     fontBtns.forEach(b => b.classList.remove('active'));
@@ -702,6 +819,20 @@
             });
             const sizeDisplay = document.getElementById('font-size-display');
             if (sizeDisplay) sizeDisplay.innerText = currentFontSize + 'px';
+
+            const voiceBtns = document.querySelectorAll('.tts-voice-btn');
+            const savedVoice = localStorage.getItem('ttsVoice') || 'vi-VN-HoaiMyNeural';
+            voiceBtns.forEach(btn => {
+                if (btn.getAttribute('data-voice') === savedVoice) {
+                    voiceBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                }
+                btn.addEventListener('click', (e) => {
+                    voiceBtns.forEach(b => b.classList.remove('active'));
+                    e.currentTarget.classList.add('active');
+                    ttsChangeVoice(e.currentTarget.getAttribute('data-voice'));
+                });
+            });
         }
 
         function changeFontSize(delta) {
@@ -721,6 +852,239 @@
         }
         function escapeRegex(string) {
             return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // ========== TTS (Text-to-Speech) ==========
+        const tts = {
+            playing: false,
+            paused: false,
+            idx: 0,
+            items: [],
+            audio: null,
+            prefetchUrl: null,
+            prefetchIdx: -1,
+            chapNum: 0,
+            voice: localStorage.getItem('ttsVoice') || 'vi-VN-HoaiMyNeural',
+            rates: ['-20%', '-10%', '+0%', '+10%', '+20%', '+30%', '+50%'],
+            rateLabels: ['0.8x', '0.9x', '1.0x', '1.1x', '1.2x', '1.3x', '1.5x'],
+            rateIdx: parseInt(localStorage.getItem('ttsSpeedIdx') || '2'),
+            visible: false,
+        };
+
+        function ttsInit() {
+            const sel = document.getElementById('tts-voice-select');
+            if (sel) sel.value = tts.voice;
+            document.getElementById('tts-speed-btn').textContent = tts.rateLabels[tts.rateIdx];
+        }
+
+        function ttsTogglePlayer() {
+            tts.visible = !tts.visible;
+            document.getElementById('tts-player').classList.toggle('visible', tts.visible);
+            document.getElementById('main-content').classList.toggle('tts-padded', tts.visible);
+            document.getElementById('btn-tts').classList.toggle('active', tts.visible);
+            document.getElementById('btn-top').style.bottom = tts.visible ? '90px' : '30px';
+            if (tts.visible && !tts.playing) ttsCollect();
+        }
+
+        function ttsCollect() {
+            const chapNum = parseInt(document.getElementById('chapter-select').value);
+            tts.chapNum = chapNum;
+            const seg = document.querySelector(`.chapter-segment[data-chapter="${chapNum}"]`);
+            if (!seg) return;
+            tts.items = [];
+            // Tiêu đề chương đọc trước
+            const h1 = seg.querySelector('.chapter-header h1');
+            if (h1) tts.items.push({ text: h1.textContent.trim(), el: h1 });
+            // Rồi đọc từng đoạn văn
+            seg.querySelectorAll('.chapter-body p').forEach(p => {
+                const t = p.textContent.trim();
+                if (t) tts.items.push({ text: t, el: p });
+            });
+            tts.idx = 0;
+            ttsUpdateUI();
+        }
+
+        async function ttsToggle() {
+            if (tts.playing && !tts.paused) {
+                ttsPause();
+            } else if (tts.paused && tts.audio) {
+                ttsResume();
+            } else {
+                // Bắt đầu hoặc tiếp tục từ vị trí hiện tại
+                if (!tts.items.length) ttsCollect();
+                if (!tts.items.length) return;
+                tts.playing = true;
+                tts.paused = false;
+                ttsUpdateUI();
+                await ttsPlayAt(tts.idx);
+            }
+        }
+
+        function ttsPause() {
+            if (tts.audio) tts.audio.pause();
+            tts.paused = true;
+            ttsUpdateUI();
+        }
+
+        function ttsResume() {
+            if (tts.audio) tts.audio.play();
+            tts.paused = false;
+            ttsUpdateUI();
+        }
+
+        function ttsStop() {
+            if (tts.audio) { tts.audio.pause(); tts.audio.src = ''; tts.audio = null; }
+            if (tts.prefetchUrl) { URL.revokeObjectURL(tts.prefetchUrl); tts.prefetchUrl = null; }
+            tts.playing = false;
+            tts.paused = false;
+            tts.idx = 0;
+            ttsClearHL();
+            ttsUpdateUI();
+        }
+
+        async function ttsNext() {
+            if (tts.idx >= tts.items.length - 1) return;
+            if (tts.audio) { tts.audio.pause(); tts.audio.src = ''; tts.audio = null; }
+            tts.idx++;
+            if (tts.playing && !tts.paused) {
+                await ttsPlayAt(tts.idx);
+            } else {
+                ttsHighlight(tts.items[tts.idx].el);
+                ttsUpdateUI();
+            }
+        }
+
+        async function ttsPrev() {
+            if (tts.idx <= 0) return;
+            if (tts.audio) { tts.audio.pause(); tts.audio.src = ''; tts.audio = null; }
+            tts.idx--;
+            if (tts.playing && !tts.paused) {
+                await ttsPlayAt(tts.idx);
+            } else {
+                ttsHighlight(tts.items[tts.idx].el);
+                ttsUpdateUI();
+            }
+        }
+
+        async function ttsPlayAt(idx) {
+            if (idx >= tts.items.length) {
+                // Hết chương → tự động sang chương tiếp
+                await ttsNextChapter();
+                return;
+            }
+            tts.idx = idx;
+            const item = tts.items[idx];
+            ttsHighlight(item.el);
+
+            const playBtn = document.getElementById('tts-play-btn');
+            const hasPrefetch = tts.prefetchUrl && tts.prefetchIdx === idx;
+            if (!hasPrefetch) playBtn.classList.add('loading');
+            ttsUpdateUI();
+
+            try {
+                let url;
+                if (hasPrefetch) {
+                    url = tts.prefetchUrl;
+                    tts.prefetchUrl = null;
+                    tts.prefetchIdx = -1;
+                } else {
+                    url = await ttsFetch(item.text);
+                }
+
+                // Prefetch đoạn tiếp theo
+                if (idx + 1 < tts.items.length) {
+                    const ni = idx + 1;
+                    ttsFetch(tts.items[ni].text).then(u => {
+                        tts.prefetchUrl = u;
+                        tts.prefetchIdx = ni;
+                    });
+                }
+
+                if (tts.audio) { tts.audio.pause(); tts.audio.src = ''; }
+                tts.audio = new Audio(url);
+                tts.audio.onended = () => {
+                    URL.revokeObjectURL(url);
+                    if (tts.playing) { tts.idx++; ttsPlayAt(tts.idx); }
+                };
+                tts.audio.onerror = () => {
+                    URL.revokeObjectURL(url);
+                    if (tts.playing) { tts.idx++; ttsPlayAt(tts.idx); }
+                };
+                await tts.audio.play();
+            } catch (e) {
+                console.error('TTS error:', e);
+            } finally {
+                playBtn.classList.remove('loading');
+            }
+        }
+
+        async function ttsNextChapter() {
+            const next = tts.chapNum + 1;
+            if (next > TOTAL_CHAPTERS) { ttsStop(); return; }
+            // Tải chương mới và lưu tiến trình
+            await loadChapter(next, false);
+            updateActiveChapter(next);
+            history.replaceState(null, null, `#chap${next}`);
+            // Thu thập đoạn văn chương mới và đọc từ tiêu đề
+            ttsCollect();
+            await ttsPlayAt(0);
+        }
+
+        async function ttsFetch(text) {
+            const res = await fetch(TTS_API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text, voice: tts.voice, rate: tts.rates[tts.rateIdx] })
+            });
+            if (!res.ok) throw new Error('TTS API: ' + res.status);
+            const blob = await res.blob();
+            return URL.createObjectURL(blob);
+        }
+
+        function ttsHighlight(el) {
+            ttsClearHL();
+            if (el) {
+                el.classList.add('tts-reading');
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function ttsClearHL() {
+            document.querySelectorAll('.tts-reading').forEach(e => e.classList.remove('tts-reading'));
+        }
+
+        function ttsUpdateUI() {
+            const btn = document.getElementById('tts-play-btn');
+            const info = document.getElementById('tts-info');
+            const prog = document.getElementById('tts-progress-fill');
+            btn.textContent = (tts.playing && !tts.paused) ? '⏸' : '▶';
+            const total = tts.items.length;
+            const cur = Math.min(tts.idx + 1, total);
+            if (total > 0) {
+                const txt = tts.items[Math.min(tts.idx, total - 1)]?.text || '';
+                const preview = txt.length > 35 ? txt.substring(0, 35) + '…' : txt;
+                info.textContent = `Ch.${tts.chapNum} — ${cur}/${total} — ${preview}`;
+                prog.style.width = `${(cur / total) * 100}%`;
+            } else {
+                info.textContent = 'Nhấn ▶ để bắt đầu đọc';
+                prog.style.width = '0%';
+            }
+        }
+
+        function ttsChangeSpeed() {
+            tts.rateIdx = (tts.rateIdx + 1) % tts.rates.length;
+            document.getElementById('tts-speed-btn').textContent = tts.rateLabels[tts.rateIdx];
+            localStorage.setItem('ttsSpeedIdx', tts.rateIdx);
+        }
+
+        function ttsChangeVoice(v) {
+            tts.voice = v;
+            localStorage.setItem('ttsVoice', v);
+            document.querySelectorAll('.tts-voice-btn').forEach(b => {
+                b.classList.toggle('active', b.getAttribute('data-voice') === v);
+            });
+            const sel = document.getElementById('tts-voice-select');
+            if (sel) sel.value = v;
         }
 
         window.onload = init;
